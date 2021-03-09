@@ -37,21 +37,21 @@ For example, the following code creates an HTTPS URL from the DNS name (the raw 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let url = virtualmachine.dnsName.apply(dnsName => "https://" + dnsName);
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let url = virtualmachine.dnsName.apply(dnsName => "https://" + dnsName);
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 url = virtual_machine.dns_name.apply(
@@ -59,8 +59,8 @@ url = virtual_machine.dns_name.apply(
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 url := vpc.DnsName.ApplyString(func(dnsName string) string {
@@ -68,14 +68,14 @@ url := vpc.DnsName.ApplyString(func(dnsName string) string {
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var url = virtualmachine.DnsName.Apply(dnsName => "https://" + dnsName);
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -93,7 +93,7 @@ For example, let’s use a server and a database name to create a database conne
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 var pulumi = require("@pulumi/pulumi");
@@ -102,8 +102,8 @@ let connectionString = pulumi.all([sqlServer.name, database.name])
     .apply(([server, db]) => `Server=tcp:${server}.database.windows.net;initial catalog=${db}...`);
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -112,8 +112,8 @@ let connectionString = pulumi.all([sqlServer.name, database.name])
     .apply(([server, db]) => `Server=tcp:${server}.database.windows.net;initial catalog=${db}...`);
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import Output
@@ -122,8 +122,8 @@ connection_string = Output.all(sql_server.name, database.name) \
     .apply(lambda args: f"Server=tcp:{args[0]}.database.windows.net;initial catalog={args[1]}...")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 connectionString := pulumi.All(sqlServer.Name, database.Name).ApplyT(
@@ -135,8 +135,8 @@ connectionString := pulumi.All(sqlServer.Name, database.Name).ApplyT(
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // When all the input values have the same type, Output.All can be used and produces an ImmutableArray.
@@ -155,7 +155,7 @@ var connectionString2 = Output.Tuple(sqlServer.name, database.name).Apply(t =>
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -169,7 +169,7 @@ For example, to read a domain record from an ACM certificate, you need to access
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let certCertificate = new aws.acm.Certificate("cert", {
@@ -186,8 +186,8 @@ let certValidation = new aws.route53.Record("cert_validation", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let certCertificate = new aws.acm.Certificate("cert", {
@@ -204,8 +204,8 @@ let certValidation = new aws.route53.Record("cert_validation", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 certificate = aws.acm.Certificate('cert',
@@ -224,8 +224,8 @@ record = aws.route53.Record('validation',
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 cert, err := acm.NewCertificate(ctx, "cert", &acm.CertificateArgs{
@@ -249,8 +249,8 @@ if err != nil {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var cert = new Certificate("cert", new CertificateArgs
@@ -268,7 +268,7 @@ var record = new Record("validation", new RecordArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -276,7 +276,7 @@ Instead, to make it easier to access simple property and array elements, an {{< 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let certCertificate = new aws.acm.Certificate("cert", {
@@ -290,8 +290,8 @@ let certValidation = new aws.route53.Record("cert_validation", {
 ...
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let certCertificate = new aws.acm.Certificate("cert", {
@@ -305,8 +305,8 @@ let certValidation = new aws.route53.Record("cert_validation", {
 ...
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 certificate = aws.acm.Certificate('cert',
@@ -321,8 +321,8 @@ record = aws.route53.Record('validation',
 ...
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 cert, err := acm.NewCertificate(ctx, "cert", &acm.CertificateArgs{
@@ -348,8 +348,8 @@ if err != nil {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var cert = new Certificate("cert", new CertificateArgs
@@ -368,7 +368,7 @@ var record = new Record("validation", new RecordArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -408,7 +408,7 @@ For example, say you want to create a URL from `hostname` and `port` output valu
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let hostname = res.hostname;
@@ -419,8 +419,8 @@ let url = pulumi.all([hostname, port]).
     apply(([hostname, port]) => `http://${hostname}:${port}/`);
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let hostname: Output<string>;
@@ -431,8 +431,8 @@ let url = pulumi.all([hostname, port]).
     apply(([hostname, port]) => `http://${hostname}:${port}/`);
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 hostname: Output[str]
@@ -442,8 +442,8 @@ port: Output[int]
 url = Output.all(hostname, port).apply(lambda l: f"http://{l[0]}:{l[1]}/")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 var hostname pulumi.StringOutput
@@ -455,8 +455,8 @@ url := pulumi.All(hostname, port).ApplyString(func (args []interface{}) string {
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 Output<string> hostname = // get some Output
@@ -466,13 +466,13 @@ Output<int> port = // get some Output
 var url = Output.Tuple(hostname, port).Apply(t => $"http://{t.Item1}:{t.Item2}/");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
 However, this approach is verbose and unwieldy. To make this common task easier, Pulumi exposes helpers that allow you to create strings that contain outputs—internally hiding all of the messiness required to join them together:
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 // concat takes a list of args and concatenates all of them into a single output:
@@ -481,8 +481,8 @@ const url1 = pulumi.concat("http://", hostname, ":", port, "/");
 const url2 = pulumi.interpolate `http://${hostname}:${port}/`;
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 // concat takes a list of args and concatenates all of them into a single output:
@@ -491,30 +491,30 @@ const url1: Output<string> = pulumi.concat("http://", hostname, ":", port, "/");
 const url2: Output<string> = pulumi.interpolate `http://${hostname}:${port}/`;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 # concat takes a list of args and concatenates all of them into a single output:
 url = Output.concat("http://", hostname, ":", port, "/")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 url := pulumi.Sprintf("http://%s:%d/", hostname, port)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Format takes a FormattableString and expands outputs correctly:
 var url = Output.Format($"http://{hostname}:{port}/");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ## Convert Input to Output through Interpolation
 
@@ -524,7 +524,7 @@ For example, this code transforms an {{< pulumi-input >}} into an {{< pulumi-out
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 function split(input) {
@@ -533,8 +533,8 @@ function split(input) {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 function split(input: pulumi.Input<string>): pulumi.Output<string[]> {
@@ -543,8 +543,8 @@ function split(input: pulumi.Input<string>): pulumi.Output<string[]> {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 def split(input):
@@ -553,8 +553,8 @@ def split(input):
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 func split(input pulumi.StringInput) pulumi.StringArrayOutput {
@@ -564,8 +564,8 @@ func split(input pulumi.StringInput) pulumi.StringArrayOutput {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 Output<string[]> Split(Input<string> input)
@@ -575,6 +575,6 @@ Output<string[]> Split(Input<string> input)
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}

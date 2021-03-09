@@ -146,7 +146,7 @@ with AWS / Azure / Google Cloud, you can now use their official Actions:
 
 {{% chooser cloud "aws,azure,gcp" / %}}
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 ```yaml
       - name: Configure AWS Credentials
@@ -159,7 +159,7 @@ with AWS / Azure / Google Cloud, you can now use their official Actions:
 
 {{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 ```yaml
     - uses: azure/login@v1
@@ -169,7 +169,7 @@ with AWS / Azure / Google Cloud, you can now use their official Actions:
 
 {{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 ```yaml
       - uses: google-github-actions/setup-gcloud@master

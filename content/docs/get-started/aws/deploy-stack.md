@@ -57,45 +57,45 @@ Duration: 14s
 
 Remember the output you defined in the previous step? That [stack output]({{< relref "/docs/intro/concepts/stack#outputs" >}}) can be seen in the `Outputs:` section of your update. You can access your outputs from the CLI by running the `pulumi stack output [property-name]` command. For example you can print the name of your bucket with the following command:
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```bash
 $ pulumi stack output bucketName
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```bash
 $ pulumi stack output bucketName
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```bash
 $ pulumi stack output bucket_name
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```bash
 $ pulumi stack output bucketName
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```bash
 $ pulumi stack output BucketName
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Running that command will print out the name of your bucket.
 

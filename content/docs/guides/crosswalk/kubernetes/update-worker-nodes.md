@@ -22,23 +22,23 @@ properly terminate, and should leverage capabilities such as [Node selectors][k8
 [affinity][k8s-affinity], and [probes][k8s-probes] to guarantee expected
 scheduling, and readiness during updates.
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 The full code for this stack is on [GitHub](https://github.com/pulumi/kubernetes-guides/tree/master/aws/03-cluster-configuration).
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 The full code for this stack is on [GitHub](https://github.com/pulumi/kubernetes-guides/tree/master/azure/03-cluster-configuration).
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 The full code for this stack is on [GitHub](https://github.com/pulumi/kubernetes-guides/tree/master/gcp/03-cluster-configuration).
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ## Overview
 
@@ -49,7 +49,7 @@ We'll examine how to:
 
 ### Update an Existing Node Group
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 Updating an existing node group can be trivial for basic property changes.
 
@@ -70,9 +70,9 @@ See the [official AWS docs][aws-update-ng] for more details.
 [k8s-version-skew]: https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-version-skew
 [aws-update-ng]: https://docs.aws.amazon.com/eks/latest/userguide/update-stack.html
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 Updating an existing node group can be trivial for basic property changes.
 
@@ -94,9 +94,9 @@ See the official AKS [docs][aks-upgrade-docs] for more details.
 [k8s-version-skew]: https://kubernetes.io/docs/setup/release/version-skew-policy/#supported-version-skew
 [aks-upgrade-docs]: https://docs.microsoft.com/en-us/azure/aks/upgrade-cluster
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 By default, GKE clusters and node pools have their versions upgraded automatically.
 
@@ -120,7 +120,7 @@ See the official GKE [docs][gke-upgrade-docs], and [cluster autoscaler docs][gke
 [gke-upgrade-docs]: https://cloud.google.com/kubernetes-engine/docs/how-to/upgrading-a-cluster
 [gke-autoscaler]: https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ### Migrate to a New Node Group
 

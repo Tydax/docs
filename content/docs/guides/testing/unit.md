@@ -40,7 +40,7 @@ Our starting code is loosely based on the [aws-js-webserver example](https://git
 
 <div></div>
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 **index.ts**:
 
@@ -64,8 +64,8 @@ export const server = new aws.ec2.Instance("web-server-www", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 
 **infra.py**:
 
@@ -87,8 +87,8 @@ server = ec2.Instance('web-server-www;',
     user_data=user_data)            # start a simple web server
 ```
 
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 
 **main.go**:
 
@@ -145,8 +145,8 @@ func createInfrastructure(ctx *pulumi.Context) (*infrastructure, error) {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 
 **WebserverStack.cs**:
 
@@ -181,7 +181,7 @@ public class WebserverStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This basic Pulumi program allocates a security group and an instance. Notice, however, that we are violating all three of the rules stated above&mdash;let's write some tests!
 
@@ -189,7 +189,7 @@ This basic Pulumi program allocates a security group and an instance. Notice, ho
 
 You are free to use your favorite frameworks and libraries for writing unit tests and assertions.
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 This guide uses Mocha as the testing framework. [Install Mocha](https://mochajs.org/#installation) to your development environment.
 
@@ -199,21 +199,21 @@ Then, install additional NPM modules to your program:
 npm install mocha @types/mocha ts-node
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 We use the built-in [`unittest`](https://docs.python.org/3/library/unittest.html) framework, so no need to install anything.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 We use the built-in `go test` command, so no need to install anything.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "csharp" %}}
+{{< choosable language "csharp" >}}
 
 We use [NUnit](https://nunit.org/) test framework to define and run the tests, [Moq](https://github.com/moq/moq4) for mocks, and [FluentAssertions](https://github.com/fluentassertions/fluentassertions) for assertions.
 
@@ -226,13 +226,13 @@ dotnet add package Moq
 dotnet add package FluentAssertions
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ## Add Mocks
 
 Let's add the following code to mock the external calls to the Pulumi CLI.
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 **ec2tests.ts**
 
 ```ts
@@ -251,9 +251,9 @@ pulumi.runtime.setMocks({
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 **test_ec2.py**:
 
@@ -269,9 +269,9 @@ class MyMocks(pulumi.runtime.Mocks):
 pulumi.runtime.set_mocks(MyMocks())
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 **main_test.go**
 
 ```go
@@ -290,9 +290,9 @@ func (mocks) Call(token string, args resource.PropertyMap, provider string) (res
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "csharp" %}}
+{{< choosable language "csharp" >}}
 **Testing.cs**
 
 ```csharp
@@ -311,13 +311,13 @@ public static class Testing
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 The definition of the mocks interface is available at the [runtime API reference page](https://www.pulumi.com/docs/reference/pkg/nodejs/pulumi/pulumi/runtime/#Mocks).
 
 ## Write the Tests
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 The overall structure and scaffolding of our tests will look like any ordinary Mocha testing:
 
 **ec2tests.ts**:
@@ -349,8 +349,8 @@ describe("Infrastructure", function() {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 The overall structure and scaffolding of our tests will look like any ordinary Python's unittest testing:
 
 **test_ec2.py**:
@@ -371,8 +371,8 @@ class TestingWithMocks(unittest.TestCase):
     # TODO(check 3): Instances must not have SSH open to the Internet.
 ```
 
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 
 The overall structure and scaffolding of our tests will look like any ordinary Go test:
 
@@ -412,8 +412,8 @@ func TestInfrastructure(t *testing.T) {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 The overall structure and scaffolding of our tests will look like any ordinary NUnit testing:
 
 **WebserverStackTests.cs**:
@@ -433,11 +433,11 @@ namespace UnitTesting
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Now let's implement our first test: ensuring that instances have a `Name` tag. To verify this we need to grab hold of the EC2 instance object, and check the relevant property:
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 ```typescript
 // check 1: Instances have a Name tag.
@@ -452,8 +452,8 @@ it("must have a name tag", function(done) {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 
 ```python
 # check 1: Instances have a Name tag.
@@ -467,8 +467,8 @@ def test_server_tags(self):
     return pulumi.Output.all(infra.server.urn, infra.server.tags).apply(check_tags)
 ```
 
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 
 ```go
 // check 1: Instances have a Name tag.
@@ -482,8 +482,8 @@ pulumi.All(infra.server.URN(), infra.server.Tags).ApplyT(func(all []interface{})
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 
 ```csharp
 // check 1: Instances have a Name tag.
@@ -501,7 +501,7 @@ public async Task InstanceHasNameTag()
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This looks like a normal test, with a few noteworthy pieces:
 
@@ -513,7 +513,7 @@ After we've gotten through that setup, we get access to the raw inputs as plain 
 
 Now let's write our second check to assert that `userdata` property is empty:
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 ```typescript
 // check 2: Instances must not use an inline userData script.
@@ -528,8 +528,8 @@ it("must not use userData (use an AMI instead)", function(done) {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 
 ```python
 # check 2: Instances must not use an inline userData script.
@@ -542,8 +542,8 @@ def test_server_userdata(self):
     return pulumi.Output.all(infra.server.urn, infra.server.user_data).apply(check_user_data)
 ```
 
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 
 ```go
 // check 2: Instances must not use an inline userData script.
@@ -557,8 +557,8 @@ pulumi.All(infra.server.URN(), infra.server.UserData).ApplyT(func(all []interfac
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 
 ```csharp
 // check 2: Instances must not use an inline userData script.
@@ -575,11 +575,11 @@ public async Task InstanceMustNotUseInlineUserData()
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 And finally, let's write our third check. It’s a bit more complex because we're searching for ingress rules associated with a security group&mdash;of which there may be many&mdash;and CIDR blocks within those ingress rules&mdash;of which there may also be many. But it's still several lines of code:
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 ```typescript
 // check 3: Instances must not have SSH open to the Internet.
@@ -595,8 +595,8 @@ it("must not open port 22 (SSH) to the Internet", function(done) {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 
 ```python
 # check 3: Test if port 22 for ssh is exposed.
@@ -610,8 +610,8 @@ def test_security_group_rules(self):
     return pulumi.Output.all(infra.group.urn, infra.group.ingress).apply(check_security_group_rules)
 ```
 
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 
 ```go
 // check 3: Test if port 22 for ssh is exposed.
@@ -636,8 +636,8 @@ pulumi.All(infra.group.URN(), infra.group.Ingress).ApplyT(func(all []interface{}
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 
 ```csharp
 // check 3: Test if port 22 for ssh is exposed.
@@ -659,13 +659,13 @@ public async Task SecurityGroupMustNotHaveSshPortsOpenToInternet()
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 That's it&mdash;now let's run the tests.
 
 ## Run the Tests
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 The command line to run your Mocha tests would therefore be:
 
@@ -673,35 +673,35 @@ The command line to run your Mocha tests would therefore be:
 $ mocha -r ts-node/register ec2tests.ts
 ```
 
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 Run the following command to execute your Python tests:
 
 ```bash
 $ python -m unittest
 ```
 
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 Run the following command to execute your Go tests:
 
 ```bash
 $ go test
 ```
 
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 Run the following command to execute your Python tests:
 
 ```bash
 $ dotnet test
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Running this will tell us that we have three failing tests, as we had planned.
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 ```bash
   Infrastructure
@@ -716,8 +716,8 @@ Running this will tell us that we have three failing tests, as we had planned.
   3 failing
 ```
 
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 
 ```bash
 ======================================================================
@@ -738,8 +738,8 @@ Ran 3 tests in 0.034s
 FAILED (failures=3)
 ```
 
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 
 ```bash
 --- FAIL: TestInfrastructure (0.00s)
@@ -758,8 +758,8 @@ FAILED (failures=3)
 FAIL	testing-unit-go	0.501s
 ```
 
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 
 ```bash
 X InstanceHasNameTag [387ms]
@@ -779,11 +779,11 @@ Total tests: 3
      Failed: 3
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Let's fix our program to comply:
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 **index.ts**
 
 ```typescript
@@ -803,8 +803,8 @@ export const server = new aws.ec2.Instance("web-server-www", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 **infra.py**
 
 ```python
@@ -822,8 +822,8 @@ server = ec2.Instance('web-server-www;',
     ami="ami-c55673a0")             # AMI for us-east-2 (Ohio)
 ```
 
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 **main.go**
 
 ```go
@@ -871,8 +871,8 @@ func createInfrastructure(ctx *pulumi.Context) (*infrastructure, error) {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 **WebserverStack.cs**
 
 ```csharp
@@ -903,11 +903,11 @@ public class WebserverStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 And then rerun our tests:
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 ```
 Infrastructure
@@ -921,8 +921,8 @@ Infrastructure
   3 passing (454ms)
 ```
 
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 
 ```
 ----------------------------------------------------------------------
@@ -931,16 +931,16 @@ Ran 3 tests in 0.022s
 OK
 ```
 
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 
 ```
 PASS
 ok  	testing-unit-go	0.704s
 ```
 
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 
 ```
 Test Run Successful.
@@ -948,29 +948,29 @@ Total tests: 3
      Passed: 3
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 All the tests passed!
 
 ## Full Example
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 The full code for this guide is available in the examples repository: [Unit Tests in TypeScript](https://github.com/pulumi/examples/tree/74db62a03d013c2854d2cf933c074ea0a3bbf69d/testing-unit-ts).
 
 &nbsp;
-{{% /choosable %}}
-{{% choosable language "python" %}}
+{{< /choosable >}}
+{{< choosable language "python" >}}
 The full code for this guide is available in the examples repository: [Unit Tests in Python](https://github.com/pulumi/examples/tree/74db62a03d013c2854d2cf933c074ea0a3bbf69d/testing-unit-py).
 
 &nbsp;
-{{% /choosable %}}
-{{% choosable language "go" %}}
+{{< /choosable >}}
+{{< choosable language "go" >}}
 The full code for this guide is available in the examples repository: [Unit Tests in Go](https://github.com/pulumi/examples/tree/74db62a03d013c2854d2cf933c074ea0a3bbf69d/testing-unit-go).
 
 &nbsp;
-{{% /choosable %}}
-{{% choosable language "csharp" %}}
+{{< /choosable >}}
+{{< choosable language "csharp" >}}
 The full code for this guide is available in the examples repository: [Unit Tests in C#](https://github.com/pulumi/examples/tree/74db62a03d013c2854d2cf933c074ea0a3bbf69d/testing-unit-cs).
 
 &nbsp;
-{{% /choosable %}}
+{{< /choosable >}}

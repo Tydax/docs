@@ -48,7 +48,7 @@ You are free to choose your unit testing frameworks, mocking and assertions libr
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -70,8 +70,8 @@ You are free to choose your unit testing frameworks, mocking and assertions libr
 </Project>
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -100,7 +100,7 @@ You are free to choose your unit testing frameworks, mocking and assertions libr
 </Project>
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ### Stack
 
@@ -110,7 +110,7 @@ Here is my starting point in `WebsiteStack` file:
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.IO;
@@ -127,8 +127,8 @@ public class WebsiteStack : Stack
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 namespace UnitTesting
@@ -143,7 +143,7 @@ type WebsiteStack() =
     // <-- Cloud resources go here
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This class is precisely what Pulumi expects to start deploying your resources to the cloud. Once the test suite is ready and green, you can deploy the stack with `pulumi up`.
 
@@ -157,7 +157,7 @@ While you are free to use your favorite mocking library, I'll keep it simple and
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Immutable;
@@ -194,8 +194,8 @@ namespace UnitTesting
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 namespace UnitTesting
@@ -223,7 +223,7 @@ type Mocks() =
             Task.FromResult(null :> obj)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Both methods receive several parameters and need to return a result. Notably, they get the list of `inputs`&mdash;the arguments that our program defined for the given resource. The goal of the mocks is to return the list of outputs, similarly to what a cloud provider would do.
 
@@ -235,7 +235,7 @@ The next class to add is the container for my future unit tests. I named the fil
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Linq;
@@ -261,8 +261,8 @@ namespace UnitTesting
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 namespace UnitTesting
@@ -288,7 +288,7 @@ type WebserverStackTests() =
     // <-- Tests go here
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 I defined a helper method `TestAsync` that points Pulumi's `Deployment.TestAsync` to our stack and mock classes.
 
@@ -300,7 +300,7 @@ Finally, I need a small extension method to extract values from outputs. Every P
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 public static class TestingExtensions
@@ -314,8 +314,8 @@ public static class TestingExtensions
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 let getValue(output: Output<'a>): 'a =
@@ -324,7 +324,7 @@ let getValue(output: Output<'a>): 'a =
     tcs.Task.Result
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 To learn more about outputs, read [this article]({{< relref "/docs/intro/concepts/stack#outputs" >}}).
 
@@ -336,7 +336,7 @@ Every Azure resource has to live inside a resource group, so my first test check
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 [Test]
@@ -349,8 +349,8 @@ public async Task SingleResourceGroupExists()
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 [<Test>]
@@ -361,7 +361,7 @@ member this.SingleResourceGroupExists() =
     resourceGroupCount.Should().Be(1, "a single resource group is expected") |> ignore
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This code is great to illustrate the overall structure of each test:
 
@@ -390,20 +390,20 @@ I go ahead and add the following definition to the `WebsiteStack` constructor.
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 var resourceGroup = new ResourceGroup("www-prod-rg");
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 let resourceGroup = new ResourceGroup("www-prod-rg")
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This change is enough to make the tests green!
 
@@ -422,7 +422,7 @@ For billing and lifecycle management, I want all my resource groups to be tagged
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 [Test]
@@ -437,8 +437,8 @@ public async Task ResourceGroupHasEnvironmentTag()
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 [<Test>]
@@ -451,7 +451,7 @@ member this.ResourceGroupHasEnvironmentTag() =
     tags.Should().ContainKey("Environment", null) |> ignore
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 The test finds the resource group and then checks that the `Tags` dictionary is not null and contains a tag with the name `Environment`. Predictably, the test fails:
 
@@ -469,7 +469,7 @@ Now, I edit the stack class and change the resource group definition.
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 var resourceGroup = new ResourceGroup("www-prod-rg", new ResourceGroupArgs
@@ -478,8 +478,8 @@ var resourceGroup = new ResourceGroup("www-prod-rg", new ResourceGroupArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 let resourceGroup =
@@ -488,7 +488,7 @@ let resourceGroup =
         new ResourceGroupArgs(Tags = inputMap(["Environment", input "production"])))
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This change makes the test suite green again, and we are good to proceed.
 
@@ -500,7 +500,7 @@ There's no direct link between a storage account object and a resource group obj
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 [Test]
@@ -515,8 +515,8 @@ public async Task StorageAccountBelongsToResourceGroup()
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 [<Test>]
@@ -529,13 +529,13 @@ member this.StorageAccountBelongsToResourceGroup() =
     resourceGroupName.Should().Be("www-prod-rg", null) |> ignore
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Of course, the test fails. I try to fix it with what I think is the minimal change to make the test pass by adding a new resource to the stack and pointing it to the resource group.
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 var storageAccount = new Storage.Account("wwwprodsa", new Storage.AccountArgs
@@ -544,8 +544,8 @@ var storageAccount = new Storage.Account("wwwprodsa", new Storage.AccountArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 let storageAccount =
@@ -554,13 +554,13 @@ let storageAccount =
         new AccountArgs(ResourceGroupName = io resourceGroup.Name))
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 However, when I rerun the test suite, all three tests fail. They complain about the missing required properties `AccountReplicationType` and `AccountTier` on the storage account, so I have to add those.
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 var storageAccount = new Storage.Account("wwwprodsa", new Storage.AccountArgs
@@ -575,8 +575,8 @@ var storageAccount = new Storage.Account("wwwprodsa", new Storage.AccountArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 let storageAccount =
@@ -589,7 +589,7 @@ let storageAccount =
             StaticWebsite = input (new AccountStaticWebsiteArgs(IndexDocument = input "index.html"))))
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 I defined the `StaticWebsite` property as well: I'll leave testing these values as an exercise for the reader.
 
@@ -611,7 +611,7 @@ That's a good reason to change the `Mocks` implementation. I add the following l
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Set the name to resource name if it's not set explicitly in inputs.
@@ -619,8 +619,8 @@ if (!inputs.ContainsKey("name"))
     outputs.Add("name", name);
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 let inputKVs = inputs |> Seq.map(fun kv -> kv.Key, kv.Value) |> Seq.toList
@@ -630,7 +630,7 @@ let outputs = [inputKVs; nameKVs] |> Seq.concat |> Seq.map KeyValuePair
 let dict = outputs.ToImmutableDictionary() :> obj
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Note that mocks operate on weakly-typed dictionaries, so I need to get the property name right. Pulumi SDKs are open source, so I looked [here](https://github.com/pulumi/pulumi-azure/blob/1fdcab88065175ced768d900e7dcedf3b1d1b0a7/sdk/dotnet/Core/ResourceGroup.cs#L90) to double-check the exact value.
 
@@ -658,7 +658,7 @@ I create a `wwwroot` folder with two HTML files in it and copy the folder to the
 
 Now, the test is straightforward: it expects two `Blob` resources in the stack.
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 {{< chooser language "csharp,fsharp" />}}
 
@@ -672,8 +672,8 @@ public async Task UploadsTwoFiles()
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 [<Test>]
@@ -683,7 +683,7 @@ member this.UploadsTwoFiles() =
     filesCount.Should().Be(2, "Should have uploaded files from `wwwroot`") |> ignore
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 As intended, the test fails immediately.
 
@@ -697,7 +697,7 @@ I extend my stack with the following loop that navigates through the files and c
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 var files = Directory.GetFiles("wwwroot");
@@ -714,8 +714,8 @@ foreach (var file in files)
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 let files =
@@ -733,7 +733,7 @@ let files =
     |> List.ofSeq
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 However, this change breaks the stack and all tests in the suite:
 
@@ -751,7 +751,7 @@ I'm not particularly interested in testing the binary contents of the files now,
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 if (type == "azure:storage/blob:Blob")
@@ -762,8 +762,8 @@ if (type == "azure:storage/blob:Blob")
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 let outputs =
@@ -773,7 +773,7 @@ let outputs =
     |> Seq.map KeyValuePair
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This change makes my test suite happy again.
 
@@ -791,7 +791,7 @@ For instance, when Azure creates a static website, it automatically assigns a pu
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 [Test]
@@ -805,8 +805,8 @@ public async Task StackExportsWebsiteUrl()
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 [<Test>]
@@ -818,13 +818,13 @@ member this.StackExportsWebsiteUrl() =
     endpoint.Should().Be("https://wwwprodsa.web.core.windows.net", null) |> ignore
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This test doesn't even compile yet, so I have to define the `Endpoint` property and assign a value to it. Here is the complete implementation of the stack with the output property defined at the end.
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 public class WebsiteStack : Stack
@@ -867,8 +867,8 @@ public class WebsiteStack : Stack
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 type WebsiteStack() =
@@ -906,7 +906,7 @@ type WebsiteStack() =
     member val Endpoint = storageAccount.PrimaryWebEndpoint with get, set
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Now, the test compiles but fails when executed:
 
@@ -920,7 +920,7 @@ That's because there is no call to Azure to populate the endpoint. It's time to 
 
 {{< chooser language "csharp,fsharp" />}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 // For a Storage Account...
@@ -932,8 +932,8 @@ if (type == "azure:storage/account:Account")
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language fsharp %}}
+{{< /choosable >}}
+{{< choosable language fsharp >}}
 
 ```fsharp
 let endpointKVs =
@@ -946,7 +946,7 @@ let outputs =
 // ...
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 And that's it! My static website is ready and tested!
 

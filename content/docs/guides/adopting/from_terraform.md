@@ -25,41 +25,41 @@ To use this class, first install the relevant package on your system:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```bash
 $ npm install @pulumi/terraform
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```bash
 $ npm install @pulumi/terraform
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```bash
 $ pip3 install pulumi_terraform
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```bash
 $ go get github.com/pulumi/pulumi-terraform/sdk/v2
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```bash
 $ dotnet add package Pulumi.Terraform
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -67,7 +67,7 @@ For example, this code reads AWS EC2 VPC and subnet IDs from `terraform.tfstate`
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -93,8 +93,8 @@ for (let i = 0; i < 2; i++) {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -120,8 +120,8 @@ for (let i = 0; i < 2; i++) {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_aws as aws
@@ -144,8 +144,8 @@ for i in range(2):
         subnet_id=public_subnet_ids[i])
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -196,8 +196,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Immutable;
@@ -233,7 +233,7 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -257,7 +257,7 @@ This example uses the `"local"` backend type which simply reads a `tfstate` file
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -279,8 +279,8 @@ let networkState = new terraform.state.RemoteStateReference("network", {
 // Same as above ...
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -302,8 +302,8 @@ const networkState = new terraform.state.RemoteStateReference("network", {
 // Same as above ...
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -323,8 +323,8 @@ network_state = terraform.state.RemoteStateReference('network',
 # Same as above ...
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -362,8 +362,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -392,7 +392,7 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -436,20 +436,20 @@ Next, run `tf2pulumi`. It will convert the entire project whose directory you ar
 
 {{< chooser language "typescript,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```bash
 $ tf2pulumi
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```bash
 $ tf2pulumi --target-language python
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{% /chooser %}}
 
 This will generate a Pulumi TypeScript program in index.ts that when run with pulumi update will deploy the infrastructure originally described by the Terraform project. Note that if your infrastructure references files or directories with paths relative to the location of the Terraform project, you will most likely need to update these paths such that they are relative to the generated index.ts file.

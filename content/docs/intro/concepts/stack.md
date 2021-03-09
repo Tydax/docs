@@ -130,35 +130,35 @@ To export values from a stack, use the following definition in the top-level of 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 exports.url = resource.url;
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 export let url = resource.url;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 pulumi.export("url", resource.url)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 ctx.Export("url", resource.Url)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 public class MyStack : Stack
@@ -174,7 +174,7 @@ public class MyStack : Stack
 }
  ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -188,31 +188,31 @@ For example, the following statements:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 exports.x = "hello"
 exports.o = {num: 42}
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 export let x = "hello";
 export let o = {num: 42};
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 pulumi.export("x", "hello")
 pulumi.export("o", {'num': 42})
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 ctx.Export("x", pulumi.String("hello"))
@@ -221,8 +221,8 @@ ctx.Export("o", pulumi.Map(map[string]pulumi.Input{
 }))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 class MyStack : Stack
@@ -240,7 +240,7 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -277,41 +277,41 @@ The {{< pulumi-getstack >}} function gives you the currently deploying stack, wh
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let stack = pulumi.getStack();
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let stack = pulumi.getStack();
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 stack = pulumi.get_stack()
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 stack := ctx.Stack()
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var stack = Deployment.Instance.StackName;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -323,7 +323,7 @@ To reference values from another stack, create an instance of the `StackReferenc
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const pulumi = require("@pulumi/pulumi");
@@ -331,8 +331,8 @@ const other = new pulumi.StackReference("acmecorp/infra/other");
 const otherOutput = other.getOutput("x");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -340,8 +340,8 @@ const other = new pulumi.StackReference("acmecorp/infra/other");
 const otherOutput = other.getOutput("x");
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import StackReference
@@ -350,8 +350,8 @@ other = StackReference(f"acmecorp/infra/other")
 other_output = other.get_output("x");
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 other, err := pulumi.NewStackReference(ctx, "acmecorp/infra/other", nil)
@@ -361,15 +361,15 @@ if err != nil {
 otherOutput := other.GetOutput(pulumi.String("x"))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var other = new StackReference("acmecorp/infra/other");
 var otherOutput = other.GetOutput("x");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -389,35 +389,35 @@ your infrastructure stack might export the Kubernetes configuration information 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 exports.kubeConfig = ... a cluster's output property ...;
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 export const kubeConfig = ... a cluster's output property ...;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 pulumi.export("kubeConfig", ... a cluster's output property ...)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 ctx.Export("kubeConfig", /*...a cluster's output property...*/)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 class ClusterStack : Stack
@@ -433,7 +433,7 @@ class ClusterStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -444,7 +444,7 @@ The Pulumi programming model offers a way to do this with its `StackReference` r
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const k8s = require("@pulumi/kubernetes");
@@ -455,8 +455,8 @@ const provider = new k8s.Provider("k8s", { kubeconfig: infra.getOutput("kubeConf
 const service = new k8s.core.v1.Service(..., { provider: provider });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as k8s from "@pulumi/kubernetes";
@@ -467,8 +467,8 @@ const provider = new k8s.Provider("k8s", { kubeconfig: infra.getOutput("kubeConf
 const service = new k8s.core.v1.Service(..., { provider: provider });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import get_stack, ResourceOptions, StackReference
@@ -480,8 +480,8 @@ provider = Provider("k8s", kubeconfig=infra.get_output("kubeConfig"))
 service = core.v1.Service(..., ResourceOptions(provider=provider))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -502,8 +502,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -522,7 +522,7 @@ class AppStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

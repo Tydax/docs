@@ -156,7 +156,7 @@ This example imports an existing AWS EC2 security group with ID `sg-04aeda9a2147
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -167,8 +167,8 @@ let group = new aws.ec2.SecurityGroup("my-sg", {
 }, { import: "sg-04aeda9a214730248" });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -179,8 +179,8 @@ let group = new aws.ec2.SecurityGroup("my-sg", {
 }, { import: "sg-04aeda9a214730248" });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 # IMPORTANT: Python appends an underscore (`import_`) to avoid conflicting with the keyword.
@@ -197,8 +197,8 @@ group = aws.ec2.SecurityGroup('my-sg',
     opts=ResourceOptions(import_='sg-04aeda9a214730248'))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 group, err := ec2.NewSecurityGroup(ctx, "web-sg",
@@ -221,8 +221,8 @@ if err != nil {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var group = new SecurityGroup("my-sg",
@@ -244,7 +244,7 @@ var group = new SecurityGroup("my-sg",
 );
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

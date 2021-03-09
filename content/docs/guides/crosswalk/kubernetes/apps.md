@@ -13,7 +13,7 @@ resources, and typical apps and workloads.
 
 {{< chooser cloud "aws,azure,gcp" / >}}
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 The full code for the AWS apps stack is on [GitHub][gh-repo-stack].
 
@@ -21,9 +21,9 @@ The full code for the AWS apps stack is on [GitHub][gh-repo-stack].
 [gh-repo-stack]: https://github.com/pulumi/kubernetes-guides/tree/master/aws/06-apps
 <!-- markdownlint-enable url -->
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 The full code for the Azure apps stack is on [GitHub][gh-repo-stack].
 
@@ -31,9 +31,9 @@ The full code for the Azure apps stack is on [GitHub][gh-repo-stack].
 [gh-repo-stack]: https://github.com/pulumi/kubernetes-guides/tree/master/azure/06-apps
 <!-- markdownlint-enable url -->
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 The full code for the GCP apps stack is on [GitHub][gh-repo-stack].
 
@@ -41,7 +41,7 @@ The full code for the GCP apps stack is on [GitHub][gh-repo-stack].
 [gh-repo-stack]: https://github.com/pulumi/kubernetes-guides/tree/master/gcp/06-apps
 <!-- markdownlint-enable url -->
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 The full code for the apps is on [GitHub][gh-repo-stack].
 
@@ -70,7 +70,7 @@ Check out how to:
 Build a Docker container image, push it to the registry, and deploy it to
 Kubernetes.
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 The full code for this app stack is on [GitHub][gh-aws-deploy-stack].
 
@@ -80,7 +80,7 @@ The full code for this app stack is on [GitHub][gh-aws-deploy-stack].
 
 {{< chooser k8s-language "typescript,typescript-kx" >}}
 
-{{% choosable k8s-language typescript %}}
+{{< choosable k8s-language typescript >}}
 
 ```ts
 import * as awsx from "@pulumi/awsx";
@@ -120,9 +120,9 @@ const appDeployment = new k8s.apps.v1.Deployment("app", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable k8s-language typescript-kx %}}
+{{< choosable k8s-language typescript-kx >}}
 
 ```ts
 import * as awsx from "@pulumi/awsx";
@@ -157,13 +157,13 @@ const appDeploymentKx = new kx.Deployment("app-kx", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 The full code for this app stack is on [GitHub][gh-azure-deploy-stack].
 
@@ -173,7 +173,7 @@ The full code for this app stack is on [GitHub][gh-azure-deploy-stack].
 
 {{< chooser k8s-language "typescript,typescript-kx" >}}
 
-{{% choosable k8s-language typescript %}}
+{{< choosable k8s-language typescript >}}
 
 ```ts
 import * as azure from "@pulumi/azure";
@@ -232,9 +232,9 @@ const appDeployment = new k8s.apps.v1.Deployment("app", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable k8s-language typescript-kx %}}
+{{< choosable k8s-language typescript-kx >}}
 
 ```ts
 import * as azure from "@pulumi/azure";
@@ -288,13 +288,13 @@ const appDeploymentKx = new kx.Deployment("app-kx", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 The full code for this app stack is on [GitHub][gh-gcp-deploy-stack].
 
@@ -304,7 +304,7 @@ The full code for this app stack is on [GitHub][gh-gcp-deploy-stack].
 
 {{< chooser k8s-language "typescript,typescript-kx" >}}
 
-{{% choosable k8s-language typescript %}}
+{{< choosable k8s-language typescript >}}
 
 ```ts
 import * as docker from "@pulumi/docker";
@@ -351,9 +351,9 @@ const appDeployment = new k8s.apps.v1.Deployment("app", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable k8s-language typescript-kx %}}
+{{< choosable k8s-language typescript-kx >}}
 
 ```ts
 import * as docker from "@pulumi/docker";
@@ -395,11 +395,11 @@ const appDeploymentKx = new kx.Deployment("app-kx", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ## Deploy a Pod with a Sidecar
 
@@ -569,7 +569,7 @@ The full code for this app stack is on [GitHub][gh-deploy-secret-stack].
 
 {{< chooser k8s-language "typescript,typescript-kx" >}}
 
-{{% choosable k8s-language typescript %}}
+{{< choosable k8s-language typescript >}}
 
 ```ts
 import * as k8s from "@pulumi/kubernetes";
@@ -627,9 +627,9 @@ const nginx = new k8s.apps.v1.Deployment(appName, {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable k8s-language typescript-kx %}}
+{{< choosable k8s-language typescript-kx >}}
 
 ```ts
 import * as kx from "@pulumi/kubernetesx";
@@ -660,7 +660,7 @@ const nginxDeployment = new kx.Deployment(appName, {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -685,7 +685,7 @@ The full code for this app stack is on [GitHub][gh-job-stack].
 
 {{< chooser k8s-language "typescript,typescript-kx" >}}
 
-{{% choosable k8s-language typescript %}}
+{{< choosable k8s-language typescript >}}
 
 ```ts
 import * as k8s from "@pulumi/kubernetes";
@@ -709,9 +709,9 @@ const exampleJob = new k8s.batch.v1.Job("example-job", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable k8s-language typescript-kx %}}
+{{< choosable k8s-language typescript-kx >}}
 
 ```ts
 import * as kx from "@pulumi/kubernetesx";
@@ -732,7 +732,7 @@ const exampleJobKx = new kx.Job("example-job-kx", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -749,7 +749,7 @@ The full code for this app stack is on [GitHub][gh-ds-stack].
 
 {{< chooser k8s-language "typescript,typescript-kx" >}}
 
-{{% choosable k8s-language typescript %}}
+{{< choosable k8s-language typescript >}}
 
 ```ts
 import * as k8s from "@pulumi/kubernetes";
@@ -778,13 +778,13 @@ const nginx = new k8s.apps.v1.DaemonSet(appName, {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable k8s-language typescript-kx %}}
+{{< choosable k8s-language typescript-kx >}}
 
 Coming Soon.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -801,7 +801,7 @@ The full code for this app stack is on [GitHub][gh-cronjob-stack].
 
 {{< chooser k8s-language "typescript,typescript-kx" >}}
 
-{{% choosable k8s-language typescript %}}
+{{< choosable k8s-language typescript >}}
 
 ```ts
 import * as k8s from "@pulumi/kubernetes";
@@ -830,13 +830,13 @@ const exampleCronJob = new k8s.batch.v1beta1.CronJob("example-cronjob", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable k8s-language typescript-kx %}}
+{{< choosable k8s-language typescript-kx >}}
 
 Coming soon.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -854,7 +854,7 @@ The full code for this app stack is on [GitHub][gh-ss-stack].
 
 {{< chooser k8s-language "typescript,typescript-kx" >}}
 
-{{% choosable k8s-language typescript %}}
+{{< choosable k8s-language typescript >}}
 
 ```ts
 import * as k8s from "@pulumi/kubernetes";
@@ -1005,13 +1005,13 @@ const mariadb = new k8s.apps.v1.StatefulSet("mariadb", {
 }, { provider: provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable k8s-language typescript-kx %}}
+{{< choosable k8s-language typescript-kx >}}
 
 Coming soon.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

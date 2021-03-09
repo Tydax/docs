@@ -19,7 +19,7 @@ Specifying a tag in your Infrastructure as Code is easy. Not all resources are t
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -36,9 +36,9 @@ let bucket = new aws.s3.Bucket("my-bucket", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -55,9 +55,9 @@ const bucket = new aws.s3.Bucket("my-bucket", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -74,9 +74,9 @@ bucket = aws.s3.Bucket('my-bucket',
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -102,9 +102,9 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -129,7 +129,7 @@ class Program {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -145,34 +145,34 @@ Imagine we forgot to tag our S3 Bucket from earlier:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 // Oops -- no tags!
 let bucket = new aws.s3.Bucket("my-bucket");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // Oops -- no tags!
 const bucket = new aws.s3.Bucket("my-bucket");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 # Oops -- no tags!
 bucket = aws.s3.Bucket('my-bucket')
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 // Oops -- no tags!
@@ -180,16 +180,16 @@ _, err := s3.NewBucket(ctx, "my-bucket", nil)
 return err
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Oops -- no tags!
 var bucket = new Bucket("my-bucket");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -210,7 +210,7 @@ This policy is ultimately defined as a simple policy pack as follows:
 
 {{< chooser language "javascript,typescript" local >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let policy = require("@pulumi/policy");
@@ -245,9 +245,9 @@ new policy.PolicyPack("aws-tags-policies", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 ```typescript
 import * as policy from "@pulumi/policy";
@@ -286,7 +286,7 @@ interface AwsTagsPolicyConfig {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -371,7 +371,7 @@ To do that, let's write a function that detects taggable resources and merges in
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let pulumi = require("@pulumi/pulumi");
@@ -393,9 +393,9 @@ module.exports = {
 };
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -416,9 +416,9 @@ export function registerAutoTags(autoTags: Record<string, string>): void {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -436,9 +436,9 @@ def auto_tag(args, auto_tags):
         return pulumi.ResourceTransformationResult(args.props, args.opts)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -482,9 +482,9 @@ func registerAutoTags(ctx *pulumi.Context, autoTags map[string]string) {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 static ResourceTransformation RegisterAutoTags(Dictionary<string, string> autoTags) {
@@ -504,7 +504,7 @@ static ResourceTransformation RegisterAutoTags(Dictionary<string, string> autoTa
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -512,7 +512,7 @@ Now we can go back to our main program, use this new module, remove the explicit
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -545,9 +545,9 @@ let server = new aws.ec2.Instance("web-server-www", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -580,9 +580,9 @@ const server = new aws.ec2.Instance("web-server-www", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -615,9 +615,9 @@ server = aws.ec2.Instance('web-server-www',
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -669,9 +669,9 @@ func main() {
 })
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -719,7 +719,7 @@ class MyStack : Stack {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

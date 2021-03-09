@@ -15,7 +15,7 @@ Policies can be written in TypeScript/JavaScript (Node.js) or Python and can be 
 
 {{< chooser language "typescript,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 1. Install prerequisites.
 
@@ -67,8 +67,8 @@ Policies can be written in TypeScript/JavaScript (Node.js) or Python and can be 
     });
     ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 1. Install prerequisites.
 
@@ -129,7 +129,7 @@ Policies can be written in TypeScript/JavaScript (Node.js) or Python and can be 
     )
     ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -141,7 +141,7 @@ Now let's take a look at how to run the Policy Pack locally against a Pulumi pro
 
 {{< chooser language "typescript,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 1. Use the `--policy-pack` flag with `pulumi preview` or `pulumi up` to specify the path to the directory containing your Policy Pack when previewing/updating a Pulumi program.
 
@@ -191,8 +191,8 @@ Now let's take a look at how to run the Policy Pack locally against a Pulumi pro
             Prohibits setting the publicRead or publicReadWrite permission on AWS S3 buckets.
             You cannot set public-read or public-read-write on an S3 bucket. Read more about ACLs here: https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 1. Use the `--policy-pack` flag with `pulumi preview` or `pulumi up` to specify the path to the directory containing your Policy Pack when previewing/updating a Pulumi program.
 
@@ -240,7 +240,7 @@ Now let's take a look at how to run the Policy Pack locally against a Pulumi pro
             Prohibits setting the publicRead or publicReadWrite permission on AWS S3 buckets.
             You cannot set public-read or public-read-write on an S3 bucket. Read more about ACLs here: https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

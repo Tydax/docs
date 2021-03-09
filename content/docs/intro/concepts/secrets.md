@@ -31,43 +31,43 @@ Inside of an `apply` or `Output.all` call, your secret is decrypted into plainte
 There are two ways to programmatically create secret values:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 - Using [`getSecret(key)`]({{< relref "/docs/reference/pkg/nodejs/pulumi/pulumi#Config-getSecret" >}}) or [`requireSecret(key)`]({{< relref "/docs/reference/pkg/nodejs/pulumi/pulumi#Config-requireSecret" >}}) when reading a value from config.
 - Calling [`pulumi.secret(value)`]({{< relref "/docs/reference/pkg/nodejs/pulumi/pulumi#secret" >}}) to construct a secret from an existing value.
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 - Using [`getSecret(key)`]({{< relref "/docs/reference/pkg/nodejs/pulumi/pulumi#Config-getSecret" >}}) or [`requireSecret(key)`]({{< relref "/docs/reference/pkg/nodejs/pulumi/pulumi#Config-requireSecret" >}}) when reading a value from config.
 - Calling [`pulumi.secret(value)`]({{< relref "/docs/reference/pkg/nodejs/pulumi/pulumi#secret" >}}) to construct a secret from an existing value.
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 - Using [`get_secret`]({{< relref "/docs/reference/pkg/python/pulumi#pulumi.Config.get_secret" >}}) or [`require_secret`]({{< relref "/docs/reference/pkg/python/pulumi#pulumi.Config.require_secret" >}}) when reading a value from config.
 - Calling [`Output.secret`]({{< relref "/docs/reference/pkg/python/pulumi#pulumi.Output.secret" >}}) to construct a secret from an existing value.
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 - Using `config.GetSecret(key)` or `config.RequireSecret(key)` when reading a value from config.
 - Calling `pulumi.ToSecret(value)` to construct a secret from an existing value.
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 - Using `Config.GetSecret(key)` or `Config.RequireSecret(key)` when reading a value from config.
 - Calling `Output.CreateSecret(value)` to construct a secret from an existing value.
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 As an example, let’s create an AWS Parameter Store secure value. Parameter Store is an AWS service that stores strings. Those strings can either be secret or not. To create an encrypted value, we need to pass an argument to initialize the store’s `value` property. Unfortunately, the obvious thing to do —passing a raw, unencrypted value— means that the value is also stored in the Pulumi state, unencrypted so we need to ensure that the value is a secret:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const cfg = new pulumi.Config()
@@ -77,8 +77,8 @@ const param = new aws.ssm.Parameter("a-secret-param", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const cfg = new pulumi.Config()
@@ -88,8 +88,8 @@ const param = new aws.ssm.Parameter("a-secret-param", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 cfg = pulumi.Config()
@@ -98,8 +98,8 @@ param = ssm.Parameter("a-secret-param",
     value=cfg.require_secret("my-secret-value"))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -125,8 +125,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var cfg = new Pulumi.Config()
@@ -137,7 +137,7 @@ var param = new Aws.Ssm.Parameter("a-secret-param", new Aws.Ssm.ParameterArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -186,7 +186,7 @@ Similarly, if our program attempts to print the value of `dbPassword` to the con
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 var pulumi = require("@pulumi/pulumi");
@@ -194,8 +194,8 @@ var config = new pulumi.Config();
 console.log("Password: " + config.require("dbPassword"));
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -203,8 +203,8 @@ const config = new pulumi.Config();
 console.log(`Password: ${config.require("dbPassword")}`);
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -212,23 +212,23 @@ config = pulumi.Config()
 print('Password: {}'.format(config.require('dbPassword')))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 c := config.New(ctx, "")
 fmt.Println("Password: "+c.Require("dbPassword"))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var config = new Pulumi.Config();
 Console.WriteLine($"Password: {config.Require("dbPassword")}");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -262,7 +262,7 @@ Use the following code to access these configuration values in your Pulumi progr
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 var pulumi = require("@pulumi/pulumi");
@@ -273,8 +273,8 @@ var name = config.require("name");
 var dbPassword = config.requireSecret("dbPassword");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -285,8 +285,8 @@ const name = config.require("name");
 const dbPassword = config.requireSecret("dbPassword");
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -297,8 +297,8 @@ print(config.require('name'))
 print(config.require_secret('dbPassword'))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -317,8 +317,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Threading.Tasks;
@@ -336,7 +336,7 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

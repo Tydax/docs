@@ -27,7 +27,7 @@ Pulumi has the unique ability to interact with cloud providers across many bound
 
 {{< chooser language "typescript,python,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as digitalocean from "@pulumi/digitalocean";
@@ -80,9 +80,9 @@ const nginx = new k8s.helm.v2.Chart("nginx-ingress",
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 """A DigitalOcean Python Pulumi program"""
@@ -143,9 +143,9 @@ chart = helm.Chart(
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -223,7 +223,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

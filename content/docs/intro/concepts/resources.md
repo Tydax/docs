@@ -24,41 +24,41 @@ A custom resource’s desired state is declared by constructing an instance of t
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let res = new Resource(name, args, options);
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let res = new Resource(name, args, options);
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 res = Resource(name, args, options)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 res, err := NewResource(ctx, name, args, opt1, opt2)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var res = new Resource(name, args, options);
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -74,41 +74,41 @@ Every resource managed by Pulumi has a logical name that you specify as an argum
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let role = new aws.iam.Role("my-role");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let role = new aws.iam.Role("my-role");
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 role = iam.Role("my-role")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 role, err := iam.NewRole(ctx, "my-role", &iam.RoleArgs{})
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var role = new Aws.Iam.Role("my-role");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -140,7 +140,7 @@ For cases that require specific names, you can override auto-naming by specifyin
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let role = new aws.iam.Role("my-role", {
@@ -148,8 +148,8 @@ let role = new aws.iam.Role("my-role", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let role = new aws.iam.Role("my-role", {
@@ -157,8 +157,8 @@ let role = new aws.iam.Role("my-role", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 role = iam.Role('my-role', {
@@ -166,8 +166,8 @@ role = iam.Role('my-role', {
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 role, err := iam.NewRole(ctx, "my-role", &iam.RoleArgs{
@@ -175,8 +175,8 @@ role, err := iam.NewRole(ctx, "my-role", &iam.RoleArgs{
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var role = new Aws.Iam.Role("my-role", new Aws.Iam.RoleArgs
@@ -185,7 +185,7 @@ var role = new Aws.Iam.Role("my-role", new Aws.Iam.RoleArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -197,7 +197,7 @@ Because physical and logical names do not need to match, you can construct the p
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let role = new aws.iam.Role("my-role", {
@@ -205,8 +205,8 @@ let role = new aws.iam.Role("my-role", {
 }, { deleteBeforeReplace: true });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let role = new aws.iam.Role("my-role", {
@@ -214,8 +214,8 @@ let role = new aws.iam.Role("my-role", {
 }, { deleteBeforeReplace: true });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 role = iam.Role('my-role', {
@@ -223,8 +223,8 @@ role = iam.Role('my-role', {
 }, opts=ResourceOptions(delete_before_replace=True))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 role, _ := iam.NewRole(ctx, "my-role", &iam.RoleArgs{
@@ -232,8 +232,8 @@ role, _ := iam.NewRole(ctx, "my-role", &iam.RoleArgs{
 }, pulumi.DeleteBeforeReplace(true))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var role = new Aws.Iam.Role("my-role", new Aws.Iam.RoleArgs
@@ -244,7 +244,7 @@ var role = new Aws.Iam.Role("my-role", new Aws.Iam.RoleArgs
 );
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -307,46 +307,46 @@ This example ensures that the password generated for a database resource is an e
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let db = new Database("new-name-for-db", { /*...*/ },
     { additionalSecretOutputs: ["password"] });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let db = new Database("new-name-for-db", { /*...*/ },
     { additionalSecretOutputs: ["password"] });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 db = Database('db',
     opts=ResourceOptions(additional_secret_outputs=['password']))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 db, err := NewDatabase(ctx, "db", &DatabaseArgs{ /*...*/ },
     pulumi.AdditionalSecretOutputs([]string{"password"}))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var db = new Database("new-name-for-db", new DatabaseArgs(),
     new CustomResourceOptions { AdditionalSecretOutputs = { "password" } });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -360,46 +360,46 @@ For example, imagine we change a database resource’s name from `old-name-for-d
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let db = new Database("new-name-for-db", {/*...*/},
     { aliases: [{ name: "old-name-for-db" }] });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let db = new Database("new-name-for-db", {/*...*/},
     { aliases: [{ name: "old-name-for-db" }] });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 db = Database('db',
     opts=ResourceOptions(aliases=[Alias(name='old-name-for-db')]))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 db, err := NewDatabase(ctx, "db", &DatabaseArgs{ /*...*/ },
     pulumi.Aliases(pulumi.Alias{Name: pulumi.String("old-name-for-db")}))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var db = new Database("new-name-for-db", new DatabaseArgs(),
     new CustomResourceOptions { Aliases = { new Alias { Name = "old-name-for-db"} } });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -409,31 +409,31 @@ The above example used objects of type `Alias` with the old resource names. Thes
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let db = new Database("new-name-for-db", {/*...*/},
     { aliases: [ "urn:pulumi:stackname::projectname::aws:rds/database:Database::old-name-for-db" ] });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let db = new Database("new-name-for-db", {/*...*/},
     { aliases: [ "urn:pulumi:stackname::projectname::aws:rds/database:Database::old-name-for-db" ] });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 db = Database('db',
     opts=ResourceOptions(aliases=['urn:pulumi:stackname::projectname::aws:rds/database:Database::old-name-for-db']))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 db, err := NewDatabase(ctx, "db", &DatabaseArgs{ /*...*/ },
@@ -443,8 +443,8 @@ db, err := NewDatabase(ctx, "db", &DatabaseArgs{ /*...*/ },
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var db = new Database("new-name-for-db", new DatabaseArgs(),
@@ -452,7 +452,7 @@ var db = new Database("new-name-for-db", new DatabaseArgs(),
         Urn = "urn:pulumi:stackname::projectname::aws:rds/database:Database::old-name-for-db" } } });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -466,39 +466,39 @@ This example specifies that the create operation should wait up to 30 minutes to
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let db = new Database("db", {/*...*/},
     { customTimeouts: { create: "30m" } });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let db = new Database("db", {/*...*/},
     { customTimeouts: { create: "30m" } });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 db = Database('db',
     opts=ResourceOptions(custom_timeouts=CustomTimeouts(create='30m')))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 db, err := NewDatabase(ctx, "db", &DatabaseArgs{ /*...*/ },
     pulumi.Timeouts(&pulumi.CustomTimeouts{Create: "30m"}))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var db = new Database("db", new DatabaseArgs(),
@@ -507,7 +507,7 @@ var db = new Database("db", new DatabaseArgs(),
     });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -521,39 +521,39 @@ This example deletes a database entirely before its replacement is created:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let db = new Database("db", {/*...*/},
     { deleteBeforeReplace: true});
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let db = new Database("db", {/*...*/},
     { deleteBeforeReplace: true});
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 db = Database("db",
     opts=ResourceOptions(delete_before_replace=True))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 db, err := NewDatabase(ctx, "db", &DatabaseArgs{ /*...*/ },
     pulumi.DeleteBeforeReplace(true))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // The resource will be deleted before it's replacement is created
@@ -561,7 +561,7 @@ var db = new Database("db", new DatabaseArgs(),
     new CustomResourceOptions { DeleteBeforeReplace = true });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -575,39 +575,39 @@ This example demonstrates how to make res2 dependent on res1, even if there is n
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let res1 = new MyResource("res1", {/*...*/});
 let res2 = new MyResource("res2", {/*...*/}, { dependsOn: [res1] });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let res1 = new MyResource("res1", {/*...*/});
 let res2 = new MyResource("res2", {/*...*/}, { dependsOn: [res1] });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 res1 = MyResource("res1");
 res2 = MyResource("res2", opts=ResourceOptions(depends_on=[res1]));
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 res1, _ := NewMyResource(ctx, "res1", &MyResourceArgs{/*...*/})
 res2, _ := NewMyResource(ctx, "res2", &MyResourceArgs{/*...*/}, pulumi.DependsOn([]Resource{res1}))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var res1 = new MyResource("res1", new MyResourceArgs());
@@ -615,7 +615,7 @@ var res2 = new MyResource("res2", new MyResourceArgs(),
     new CustomResourceOptions { DependsOn = { res1 } });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -627,23 +627,23 @@ For instance, in this example, the resource’s prop property "new-value" will b
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let res = new MyResource("res",
     { prop: "new-value" }, { ignoreChanges: ["prop"] });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let res = new MyResource("res",
     { prop: "new-value" }, { ignoreChanges: ["prop"] });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 res = MyResource("res",
@@ -651,8 +651,8 @@ res = MyResource("res",
     opts=ResourceOptions(ignore_changes=["prop"]))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 res, _ := NewMyResource(ctx, "res",
@@ -660,8 +660,8 @@ res, _ := NewMyResource(ctx, "res",
     pulumi.IgnoreChanges([]string{"prop"}))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var res = new MyResource("res",
@@ -669,7 +669,7 @@ var res = new MyResource("res",
     new CustomResourceOptions { IgnoreChanges = { "prop" } });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -707,7 +707,7 @@ This example imports an existing EC2 security group with ID sg-04aeda9a214730248
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -724,8 +724,8 @@ let server = new aws.ec2.Instance("web-server", {
 }, { import: "i-06a1073de86f4adef" });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -742,8 +742,8 @@ let server = new aws.ec2.Instance("web-server", {
 }, { import: "i-06a1073de86f4adef" });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 # IMPORTANT: Python appends an underscore (`import_`) to avoid conflicting with the keyword.
@@ -765,8 +765,8 @@ server = aws.ec2.Instance('web-server',
     opts=ResourceOptions(import_='i-06a1073de86f4adef'))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 group, err := ec2.NewSecurityGroup(ctx, "web-sg",
@@ -800,8 +800,8 @@ if err != nil {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var group = new SecurityGroup("web-sg",
@@ -833,7 +833,7 @@ var server = new Instance("web-server",
 );
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -853,39 +853,39 @@ For example, this code creates two resources, a parent and child, the latter of 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let parent = new MyResource("parent", {/*...*/});
 let child = new MyResource("child", {/*...*/}, { parent: parent });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let parent = new MyResource("parent", {/*...*/});
 let child = new MyResource("child", {/*...*/}, { parent: parent });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 parent = MyResource("parent");
 child = MyResource("child", opts=ResourceOptions(parent=parent));
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 parent, _ := NewMyResource(ctx, "parent", &MyResourceArgs{/*...*/})
 child, _ := NewMyResource(ctx, "child", &MyResourceArgs{/*...*/}, pulumi.Parent(parent))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var parent = new MyResource("parent", new MyResourceArgs());
@@ -893,7 +893,7 @@ var child = new MyResource("child", new MyResourceArgs(),
     new CustomResourceOptions { Parent = parent });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -915,42 +915,42 @@ The `protect` option marks a resource as protected. A protected resource cannot 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let db = new Database("db", {}, { protect: true});
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let db = new Database("db", {}, { protect: true});
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 db = Database("db", opts=ResourceOptions(protect=True))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 db, _ := NewDatabase(ctx, "db", &DatabaseArgs{}, pulumi.Protect(true));
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var db = new Database("db", new DatabaseArgs(),
     new CustomResourceOptions { Protect = true });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -960,39 +960,39 @@ The `provider` option sets a provider for the resource. For more information, se
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let provider = new aws.Provider("provider", { region: "us-west-2" });
 let vpc = new aws.ec2.Vpc("vpc", {}, { provider: provider });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let provider = new aws.Provider("provider", { region: "us-west-2" });
 let vpc = new aws.ec2.Vpc("vpc", {}, { provider: provider });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 provider = Provider("provider", region="us-west-2")
 vpc = ec2.Vpc("vpc", opts=ResourceOptions(provider=provider))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 provider, _ := aws.NewProvider(ctx, "provider", &aws.ProviderArgs{Region: pulumi.StringPtr("us-west-2")})
 vpc, _ := ec2.NewVpc(ctx, "vpc", &ec2.VpcArgs{}, pulumi.Provider(provider))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var provider = new Aws.Provider("provider", new Aws.ProviderArgs { Region = "us-west-2" });
@@ -1000,7 +1000,7 @@ var vpc = new Aws.Ec2.Vpc("vpc", new Aws.Ec2.VpcArgs(),
     new CustomResourceOptions { Provider = provider });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1014,7 +1014,7 @@ This example looks for all VPC and Subnet resources inside of a component’s ch
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const vpc = new MyVpcComponent("vpc", {}, {
@@ -1030,8 +1030,8 @@ const vpc = new MyVpcComponent("vpc", {}, {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const vpc = new MyVpcComponent("vpc", {}, {
@@ -1047,8 +1047,8 @@ const vpc = new MyVpcComponent("vpc", {}, {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 def transformation(args: ResourceTransformationArgs):
@@ -1062,8 +1062,8 @@ def transformation(args: ResourceTransformationArgs):
 vpc = MyVpcComponent("vpc", opts=ResourceOptions(transformations=[transformation]))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 transformation := func(args *pulumi.ResourceTransformationArgs) *pulumi.ResourceTransformationResult {
@@ -1079,8 +1079,8 @@ transformation := func(args *pulumi.ResourceTransformationArgs) *pulumi.Resource
 vpc := MyVpcComponent("vpc", pulumi.Transformations([]pulumi.ResourceTransformation{transformation}))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var vpc = new MyVpcComponent("vpc", new ComponentResourceOptions
@@ -1104,15 +1104,15 @@ var vpc = new MyVpcComponent("vpc", new ComponentResourceOptions
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
-{{% choosable language "typescript,javascript,python,go" %}}
+{{< choosable language "typescript,javascript,python,go" >}}
 Transformations can also be applied in bulk to many resources in a stack by using the `registerStackTransformation` function.
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "csharp" %}}
+{{< choosable language "csharp" >}}
 Transformations can also be applied in bulk to many resources in a stack by using the `Stack` constructor's `StackOptions.ResourceTransformations` property:
 
 ```csharp
@@ -1125,7 +1125,7 @@ public class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 #### version
 
@@ -1133,42 +1133,42 @@ The `version` option specifies a provider version to use when operating on a res
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let vpc = new aws.ec2.Vpc("vpc", {}, { version: "2.10.0" });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let vpc = new aws.ec2.Vpc("vpc", {}, { version: "2.10.0" });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 vpc = ec2.Vpc("vpc", opts=ResourceOptions(version="2.10.0"))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 vpc, _ := ec2.NewVpc(ctx, "vpc", &ec2.VpcArgs{}, pulumi.Version("2.10.0"))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var vpc = new Aws.Ec2.Vpc("vpc", new Aws.Ec2.VpcArgs(),
     new CustomResourceOptions { Version = "2.10.0" });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1180,7 +1180,7 @@ You can use the `get` function to consume properties from a resource that was pr
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -1194,8 +1194,8 @@ let server = new aws.ec2.Instance("web-server", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -1209,8 +1209,8 @@ let server = new aws.ec2.Instance("web-server", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_aws as aws
@@ -1223,8 +1223,8 @@ server = aws.ec2.Instance('web-server',
     security_groups=[group.name]) # reference the security group resource above
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -1251,8 +1251,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -1274,7 +1274,7 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1302,7 +1302,7 @@ Here’s a simple component example:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 class MyComponent extends pulumi.ComponentResource {
@@ -1312,8 +1312,8 @@ class MyComponent extends pulumi.ComponentResource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 class MyComponent extends pulumi.ComponentResource {
@@ -1323,8 +1323,8 @@ class MyComponent extends pulumi.ComponentResource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 class MyComponent(pulumi.ComponentResource):
@@ -1332,8 +1332,8 @@ class MyComponent(pulumi.ComponentResource):
         super().__init__('pkg:index:MyComponent', name, None, opts)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 type MyComponent struct {
@@ -1351,8 +1351,8 @@ func NewMyComponent(ctx *pulumi.Context, name string, opts ...pulumi.ResourceOpt
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 class MyComponent : Pulumi.ComponentResource
@@ -1368,7 +1368,7 @@ class MyComponent : Pulumi.ComponentResource
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1388,46 +1388,46 @@ This example demonstrates both the naming convention and how to designate the co
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let bucket = new aws.s3.Bucket(`${name}-bucket`,
     {/*...*/}, { parent: this });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let bucket = new aws.s3.Bucket(`${name}-bucket`,
     {/*...*/}, { parent: this });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 bucket = s3.Bucket(f"{name}-bucket",
     opts=pulumi.ResourceOptions(parent=self))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 bucket, err := s3.NewBucket(ctx, fmt.Sprintf("%s-bucket", name),
     &s3.BucketArgs{ /*...*/ }, pulumi.Parent(myComponent))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var bucket = new Aws.S3.Bucket($"{name}-bucket",
     new Aws.S3.BucketArgs(/*...*/), new CustomResourceOptions { Parent = this });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1439,7 +1439,7 @@ For example, this code registers an S3 bucket’s computed domain name, which wo
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 this.registerOutputs({
@@ -1447,8 +1447,8 @@ this.registerOutputs({
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 this.registerOutputs({
@@ -1456,8 +1456,8 @@ this.registerOutputs({
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 self.register_outputs({
@@ -1465,8 +1465,8 @@ self.register_outputs({
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 ctx.RegisterResourceOutputs(myComponent, pulumi.Map{
@@ -1474,8 +1474,8 @@ ctx.RegisterResourceOutputs(myComponent, pulumi.Map{
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 this.RegisterOutputs(new Dictionary<string, object>
@@ -1484,7 +1484,7 @@ this.RegisterOutputs(new Dictionary<string, object>
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1500,7 +1500,7 @@ To allow this, component resources accept a `providers` option that custom resou
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let component = new MyComponent("...", {
@@ -1511,8 +1511,8 @@ let component = new MyComponent("...", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let component = new MyComponent("...", {
@@ -1523,8 +1523,8 @@ let component = new MyComponent("...", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 component = MyComponent('...', ResourceOptions(providers={
@@ -1533,8 +1533,8 @@ component = MyComponent('...', ResourceOptions(providers={
 }))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 component, err := NewMyResource(ctx, "...", nil, pulumi.ProviderMap(
@@ -1545,8 +1545,8 @@ component, err := NewMyResource(ctx, "...", nil, pulumi.ProviderMap(
 ))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var component = new MyResource("...", new ComponentResourceOptions {
@@ -1557,7 +1557,7 @@ var component = new MyResource("...", new ComponentResourceOptions {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1592,7 +1592,7 @@ Then, suppose you deploy the following Pulumi program:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -1603,8 +1603,8 @@ let instance = new aws.ec2.Instance("myInstance", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let aws = require("@pulumi/aws");
@@ -1615,8 +1615,8 @@ let instance = new aws.ec2.Instance("myInstance", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi_aws import ec2
@@ -1624,8 +1624,8 @@ from pulumi_aws import ec2
 instance = ec2.Instance("myInstance", instance_type="t2.micro", ami="myAMI")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 vpc, err := ec2.NewInstance(ctx, "myInstance", &ec2.InstanceArgs{
@@ -1634,8 +1634,8 @@ vpc, err := ec2.NewInstance(ctx, "myInstance", &ec2.InstanceArgs{
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var instance = new Aws.Ec2.Instance("myInstance", new Aws.Ec2.InstanceArgs
@@ -1645,7 +1645,7 @@ var instance = new Aws.Ec2.Instance("myInstance", new Aws.Ec2.InstanceArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1657,7 +1657,7 @@ While the default provider configuration may be appropriate for the majority of 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let pulumi = require("@pulumi/pulumi");
@@ -1686,8 +1686,8 @@ let listener = new aws.lb.Listener("listener", {
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let pulumi = require("@pulumi/pulumi");
@@ -1716,8 +1716,8 @@ let listener = new aws.lb.Listener("listener", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -1745,8 +1745,8 @@ listener = aws.lb.Listener("listener",
     })
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 // Create an AWS provider for the us-east-1 region.
@@ -1785,8 +1785,8 @@ if err != nil {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Create an AWS provider for the us-east-1 region.
@@ -1815,7 +1815,7 @@ var listener = new Aws.Lb.Listener("listener", new Aws.Lb.ListenerArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1827,7 +1827,7 @@ Component resources also accept a set of providers to use with their child resou
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 class MyResource extends pulumi.ComponentResource {
@@ -1842,8 +1842,8 @@ let myk8s = new kubernetes.Provider("myk8s", { context: "test-ci" });
 let myResource = new MyResource("myResource", { providers: { aws: useast1, kubernetes: myk8s } });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 class MyResource extends pulumi.ComponentResource {
@@ -1858,8 +1858,8 @@ let myk8s = new kubernetes.Provider("myk8s", { context: "test-ci" });
 let myResource = new MyResource("myResource", { providers: { aws: useast1, kubernetes: myk8s } });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 class MyResource(pulumi.ComponentResource):
@@ -1875,8 +1875,8 @@ my_resource = MyResource("myResource", pulumi.ResourceOptions(providers={
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 useast1, err := aws.NewProvider(ctx, "useast1", &aws.ProviderArgs{
@@ -1900,8 +1900,8 @@ if err != nil {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -1932,7 +1932,7 @@ class MyStack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -1955,7 +1955,7 @@ Dynamic providers are defined by first implementing the `pulumi.dynamic.Resource
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const myProvider = {
@@ -1965,8 +1965,8 @@ const myProvider = {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const myProvider: pulumi.dynamic.ResourceProvider = {
@@ -1976,8 +1976,8 @@ const myProvider: pulumi.dynamic.ResourceProvider = {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi.dynamic import ResourceProvider, CreateResult
@@ -1987,21 +1987,21 @@ class MyProvider(ResourceProvider):
         return CreateResult(id_="foo", outs={})
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 // Dynamic Providers are currently not supported in Go.
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Dynamic Providers are currently not supported in .NET.
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -2009,7 +2009,7 @@ This dynamic resource provider is then used to create a new kind of custom resou
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 class MyResource extends pulumi.dynamic.Resource {
@@ -2019,8 +2019,8 @@ class MyResource extends pulumi.dynamic.Resource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 class MyResource extends pulumi.dynamic.Resource {
@@ -2030,8 +2030,8 @@ class MyResource extends pulumi.dynamic.Resource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import ResourceOptions
@@ -2043,21 +2043,21 @@ class MyResource(Resource):
          super().__init__(MyProvider(), name, props, opts)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 // Dynamic Providers are currently not supported in Go.
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Dynamic Providers are currently not supported in .NET.
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -2090,7 +2090,7 @@ Though the input properties passed to a `pulumi.dynamic.Resource` instance will 
 
 {{< chooser language "typescript,python,go,csharp" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // Exported type.
@@ -2126,8 +2126,8 @@ class MyResource extends pulumi.dynamic.Resource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import Input, Output, ResourceOptions
@@ -2168,21 +2168,21 @@ class MyResource(Resource):
         super().__init__(MyResourceProvider(), name, {**vars(props)}, opts)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 // Dynamic Providers are currently not supported in Go.
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Dynamic Providers are currently not supported in .NET.
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ##### check(olds, news)
@@ -2232,7 +2232,7 @@ For example, `props`, in the `MyResource` class shown below, defines the inputs 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 class MyResource extends pulumi.dynamic.Resource {
@@ -2242,8 +2242,8 @@ class MyResource extends pulumi.dynamic.Resource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 interface MyResourceInputs {
@@ -2259,8 +2259,8 @@ class MyResource extends pulumi.dynamic.Resource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import Input, ResourceOptions
@@ -2279,21 +2279,21 @@ class MyResource(Resource):
          super().__init__(MyProvider(), name, {**vars(props)}, opts)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 // Dynamic Providers are currently not supported in Go.
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Dynamic Providers are currently not supported in .NET.
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -2311,14 +2311,14 @@ The name of the class member must match the names of the output properties as re
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 JavaScript does not support types.
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 ...
@@ -2346,8 +2346,8 @@ export class MyResource extends pulumi.dynamic.Resource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import ResourceOptions, Input, Output
@@ -2369,21 +2369,21 @@ class MyResource(Resource):
          super().__init__(MyProvider(), name, { 'my_string_output': None, 'my_number_output': None, **vars(props) }, opts)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 // Dynamic Providers are not yet supported in Go.
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Dynamic Providers are currently not supported in .NET.
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -2397,7 +2397,7 @@ Implementing this example requires that we have a provider and resource type:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let pulumi = require("@pulumi/pulumi");
@@ -2418,8 +2418,8 @@ class Random extends pulumi.dynamic.Resource {
 exports.Random = Random;
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -2438,8 +2438,8 @@ export class Random extends pulumi.dynamic.Resource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import ResourceOptions
@@ -2457,22 +2457,22 @@ class Random(Resource):
          super().__init__(RandomProvider(), name, {}, opts)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 // Dynamic Providers are currently not supported in Go.
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Dynamic Providers are currently not supported in .NET.
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -2484,7 +2484,7 @@ This example highlights how to make REST API calls to a backing provider to perf
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let pulumi = require("@pulumi/pulumi");
@@ -2520,8 +2520,8 @@ class Label extends pulumi.dynamic.Resource {
 exports.Label = Label;
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -2571,8 +2571,8 @@ export class Label extends pulumi.dynamic.Resource {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import ComponentResource, export, Input, Output
@@ -2628,21 +2628,21 @@ export("label_color", label.color)
 export("label_url", label.url)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 // Dynamic Providers are not currently supported in Go.
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 // Dynamic Providers are currently not supported in .NET.
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

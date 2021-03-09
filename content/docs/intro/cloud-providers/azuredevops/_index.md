@@ -23,7 +23,7 @@ The AzureDevOps provider supports several options for providing access to AzureD
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const ado = require("@pulumi/azuredevops")
@@ -33,8 +33,8 @@ const project = new ado.Core.Project("demo-project", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as ado from "@pulumi/azuredevops";
@@ -44,8 +44,8 @@ const project = new ado.Core.Project("demo-project", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_azuredevops as ado
@@ -54,8 +54,8 @@ project = ado.core.Project("demo-project",
                            project_name="my-project")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -78,8 +78,8 @@ func main() {
 
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -99,7 +99,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

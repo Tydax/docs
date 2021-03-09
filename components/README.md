@@ -167,15 +167,15 @@ Similarly:
 
 ```
 {{< chooser cloud "aws,azure,gcp" >}}
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 Some AWS stuff.
-{{% /choosable %}}
-{{% choosable cloud azure %}}
+{{< /choosable >}}
+{{< choosable cloud azure >}}
 Some Azure stuff.
-{{% /choosable %}}
-{{% choosable cloud gcp %}}
+{{< /choosable >}}
+{{< choosable cloud gcp >}}
 Some GCP stuff.
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 ```
 

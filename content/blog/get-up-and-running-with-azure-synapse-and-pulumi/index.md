@@ -62,7 +62,7 @@ Let's start by defining a resource group to contain all other resources. Be sure
 
 {{< chooser language "python,csharp,typescript" />}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 resource_group = resources.ResourceGroup("resourceGroup",
@@ -70,8 +70,8 @@ resource_group = resources.ResourceGroup("resourceGroup",
     location="westus2")
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var resourceGroup = new ResourceGroup("resourceGroup", new ResourceGroupArgs
@@ -81,8 +81,8 @@ var resourceGroup = new ResourceGroup("resourceGroup", new ResourceGroupArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const resourceGroup = new resources.ResourceGroup('resourceGroup', {
@@ -91,13 +91,13 @@ const resourceGroup = new resources.ResourceGroup('resourceGroup', {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ### Data Lake Storage Account
 
 Synapse workspace will store data in a data lake storage account. We use a Standard Read-Access Geo-Redundant Storage account (SKU `Standard_RAGRS`) for this purpose. Make sure to change the `accountName` to your own globally unique name.
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 storage_account = storage.StorageAccount("storageAccount",
@@ -113,8 +113,8 @@ storage_account = storage.StorageAccount("storageAccount",
     ))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var storageAccount = new StorageAccount("storageAccount", new StorageAccountArgs
@@ -133,8 +133,8 @@ var storageAccount = new StorageAccount("storageAccount", new StorageAccountArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const storageAccount = new storage.StorageAccount("storageAccount", {
@@ -151,35 +151,35 @@ const storageAccount = new storage.StorageAccount("storageAccount", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Let's build a data lake URL for this storage account.
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 data_lake_storage_account_url = storage_account.name.apply(lambda name: f"https://{name}.dfs.core.windows.net")
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var dataLakeStorageAccountUrl = Output.Format($"https://{storageAccount.Name}.dfs.core.windows.net");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const dataLakeStorageAccountUrl = pulumi.interpolate`https://${storageAccount.name}.dfs.core.windows.net`;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 We'll use the `users` blob container as the analytics file system.
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 users = storage.BlobContainer("users",
@@ -189,8 +189,8 @@ users = storage.BlobContainer("users",
     public_access="None")
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var users = new BlobContainer("users", new BlobContainerArgs
@@ -202,8 +202,8 @@ var users = new BlobContainer("users", new BlobContainerArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 new storage.BlobContainer("users", {
@@ -214,13 +214,13 @@ new storage.BlobContainer("users", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ### Synapse Workspace
 
 It's time to use all of the above to provision an Azure Synapse workspace! Adjust the name and the SQL credentials in the definition below.
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 workspace = synapse.Workspace("workspace",
@@ -238,8 +238,8 @@ workspace = synapse.Workspace("workspace",
     sql_administrator_login_password=random.RandomPassword("workspacePwd", length=12).result)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var workspace = new Workspace("workspace", new WorkspaceArgs
@@ -261,8 +261,8 @@ var workspace = new Workspace("workspace", new WorkspaceArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const workspace = new synapse.Workspace("workspace", {
@@ -281,7 +281,7 @@ const workspace = new synapse.Workspace("workspace", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 > Note that we also defined a system-assigned managed identity for the workspace.
 
@@ -289,7 +289,7 @@ const workspace = new synapse.Workspace("workspace", {
 
 You need to allow access to the workspace with a firewall rule. The following is a blank access rule but feel free to restrict it to your target IP range.
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 allow_all = synapse.IpFirewallRule("allowAll",
@@ -300,8 +300,8 @@ allow_all = synapse.IpFirewallRule("allowAll",
     start_ip_address="0.0.0.0")
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var allowAll = new IpFirewallRule("allowAll", new IpFirewallRuleArgs
@@ -314,8 +314,8 @@ var allowAll = new IpFirewallRule("allowAll", new IpFirewallRuleArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 new synapse.IpFirewallRule("allowAll", {
@@ -327,11 +327,11 @@ new synapse.IpFirewallRule("allowAll", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 The following snippet assigns the **Storage Blob Data Contributor** role to the workspace managed identity and your target user. If you use the Azure CLI, run `az ad signed-in-user show --query=objectId` to look up your user ID.
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 subscription_id = resource_group.id.apply(lambda id: id.split('/')[2])
@@ -352,8 +352,8 @@ authorization.RoleAssignment("userAccess",
     role_definition_id=role_definition_id)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var subscriptionId = resourceGroup.Id.Apply(id => id.Split('/')[2]);
@@ -377,8 +377,8 @@ new RoleAssignment("userAccess", new RoleAssignmentArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const subscriptionId = resourceGroup.id.apply(id => id.split('/')[2]);
@@ -401,13 +401,13 @@ new authorization.RoleAssignment("userAccess", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ### SQL and Spark Pools
 
 Finally, let's add two worker pools to the Synapse workspace. A SQL pool for T-SQL analytic queries...
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 sql_pool = synapse.SqlPool("sqlPool",
@@ -422,8 +422,8 @@ sql_pool = synapse.SqlPool("sqlPool",
     ))
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var sqlPool = new SqlPool("sqlPool", new SqlPoolArgs
@@ -441,8 +441,8 @@ var sqlPool = new SqlPool("sqlPool", new SqlPoolArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const sqlPool = new synapse.SqlPool("sqlPool", {
@@ -458,11 +458,11 @@ const sqlPool = new synapse.SqlPool("sqlPool", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ... and a Spark pool for Big Data analytics.
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 spark_pool = synapse.BigDataPool("sparkPool",
@@ -485,8 +485,8 @@ spark_pool = synapse.BigDataPool("sparkPool",
     spark_version="2.4")
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var sparkPool = new BigDataPool("sparkPool", new BigDataPoolArgs
@@ -513,8 +513,8 @@ var sparkPool = new BigDataPool("sparkPool", new BigDataPoolArgs
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const bigDataPoolResource = new synapse.BigDataPool("sparkPool", {
@@ -538,7 +538,7 @@ const bigDataPoolResource = new synapse.BigDataPool("sparkPool", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ## Ready to Dive into Analytics
 

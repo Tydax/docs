@@ -25,7 +25,7 @@ Instead, you can look up that stack by name and use one of its output values. Th
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -43,8 +43,8 @@ let web = new aws.ec2.Instance("web", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -62,8 +62,8 @@ const web = new aws.ec2.Instance("web", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_aws as aws
@@ -81,8 +81,8 @@ web = aws.ec2.Instance('web',
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -119,8 +119,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -156,7 +156,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -181,7 +181,7 @@ For instance, this code deploys a simple CloudFormation template using the given
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -225,8 +225,8 @@ module.exports = {
 };
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -268,8 +268,8 @@ const network = new aws.cloudformation.Stack("network", {
 export const vpcId = network.outputs["VpcId"];
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -312,8 +312,8 @@ network = aws.cloudformation.Stack('network',
 pulumi.export('vpc_id', network.outputs["VpcId"])
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -369,8 +369,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -428,7 +428,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -499,7 +499,7 @@ Next, we can adopt the resources under Pulumi's control, by using `import` IDs. 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let aws = require("@pulumi/aws");
@@ -514,8 +514,8 @@ module.exports = {
 };
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -528,8 +528,8 @@ const vpc = new aws.ec2.Vpc("myVpc", {
 export const vpcId = vpc.id;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_aws as aws
@@ -543,8 +543,8 @@ vpc = aws.ec2.Vpc('myVpc',
 pulumi.export('vpc_id', vpc.id)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -575,8 +575,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -613,7 +613,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

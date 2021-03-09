@@ -64,7 +64,7 @@ spec:
 
 ## Pulumi Spinnaker Plugin
 
-Many teams using Spinnaker have asked about automating the delivery of their cloud infrastructure changes using Pulumi through the same great continuous delivery platform that Spinnaker offers for application deployments.  As launch partners for the new Spinnaker Plugin model announced in June, Pulumi and Spinnaker worked closely together to deliver complete support for Pulumi inside the Spinnaker continuous deployment platform.  
+Many teams using Spinnaker have asked about automating the delivery of their cloud infrastructure changes using Pulumi through the same great continuous delivery platform that Spinnaker offers for application deployments.  As launch partners for the new Spinnaker Plugin model announced in June, Pulumi and Spinnaker worked closely together to deliver complete support for Pulumi inside the Spinnaker continuous deployment platform.
 
 You can check out the Pulumi Spinnaker integration in this presentation from Spinnaker Live and in the [Spinnaker guide]({{< relref "/docs/guides/continuous-delivery/spinnaker" >}}) in the Pulumi docs.
 
@@ -89,7 +89,7 @@ Becomes strongly-typed code in Pulumi:
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -102,9 +102,9 @@ const fooNamespace = new kubernetes.core.v1.Namespace("fooNamespace", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -116,9 +116,9 @@ foo_namespace = kubernetes.core.v1.Namespace("fooNamespace",
     })
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -140,9 +140,9 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -168,7 +168,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -188,7 +188,7 @@ For example, the commonly used [cert-manager](https://cert-manager.io/docs/insta
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as certificates from "./certificates"
@@ -218,25 +218,25 @@ new certificates.v1beta1.Certificate("example-cert", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 {{% notes type="info" %}}
 Coming soon along with overall [improved Python typing support](https://github.com/pulumi/pulumi/issues/3771)!
 {{% /notes %}}
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 {{% notes type="info" %}}
 Coming soon!
 {{% /notes %}}
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -291,7 +291,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -311,7 +311,7 @@ And as part of Pulumi’s support for organizational enforcement of policy, OPA-
 
 ## Helm 3 and Kustomize
 
-Pulumi's Kubernetes support has long included support for both defining Kubernetes resources directly in your Pulumi program, as well as using Pulumi to deploy Kubernetes resources from existing YAML or Helm. With a wealth of existing YAML and Helm content out in the ecosystem, these features have been used heavily by cloud engineering teams to deploy critical Kubernetes platform services and application logic into their Kubernetes clusters.  
+Pulumi's Kubernetes support has long included support for both defining Kubernetes resources directly in your Pulumi program, as well as using Pulumi to deploy Kubernetes resources from existing YAML or Helm. With a wealth of existing YAML and Helm content out in the ecosystem, these features have been used heavily by cloud engineering teams to deploy critical Kubernetes platform services and application logic into their Kubernetes clusters.
 
 Over the last few months, we've extended this support in two key ways. We added support for Helm 3, giving Pulumi programs access to the new generation of Helm Charts. And we [added support for Kustomize]({{< relref "/blog/announcing-kustomize-support" >}}), so that the same `kustomizations` that are supported by `kubectl` can also be deployed natively with Pulumi. Together these two enhancement ensure that Pulumi users have full access to the incredible ecosystem of content available for Kubernetes.
 
@@ -321,7 +321,7 @@ Over the last few months, we've extended this support in two key ways. We added 
 
 We’re incredibly excited about today’s new features and the opportunity to deepen Pulumi’s support for Kubernetes and the Cloud Native ecosystem. The Pulumi Kubernetes Operator unlocks exciting new approaches to cloud native infrastructure delivery. The `kube2pulumi` tool makes it easier than ever to migrate from cumbersome YAML to expressive code. Strongly-typed CRDs bring the richness of Pulumi to the entire Cloud Native ecosystem of extensions to the Kubernetes platform. And OPA support in Pulumi policy-as-code brings cloud native policy authoring with OPA into the Pulumi Modern Infrastructure-as-Code world.
 
-It’s never been a more exciting time to get started with Pulumi and Kubernetes for your next modern cloud project.  Check out the new features or the Pulumi Kubernetes [Getting Started]({{< relref "/docs/get-started/kubernetes" >}}) today.  
+It’s never been a more exciting time to get started with Pulumi and Kubernetes for your next modern cloud project.  Check out the new features or the Pulumi Kubernetes [Getting Started]({{< relref "/docs/get-started/kubernetes" >}}) today.
 
 You can learn more about each of the new capabilities in their corresponding project documentation:
 

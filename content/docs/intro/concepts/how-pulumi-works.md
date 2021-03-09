@@ -46,39 +46,39 @@ Let's walk through a simple example. Suppose we have the following Pulumi progra
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const mediaBucket = new aws.s3.Bucket("media-bucket");
 const contentBucket = new aws.s3.Bucket("content-bucket");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const mediaBucket = new aws.s3.Bucket("media-bucket");
 const contentBucket = new aws.s3.Bucket("content-bucket");
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 media_bucket = s3.Bucket('media-bucket')
 content_bucket = s3.Bucket('content-bucket')
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 mediaBucket, _ := s3.NewBucket(ctx, "media-bucket", nil)
 contentBucket, _ := s3.NewBucket(ctx, "content-bucket", nil)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Threading.Tasks;
@@ -100,7 +100,7 @@ public MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -126,7 +126,7 @@ Now, let's make a change to one of resources and run `pulumi up` again.  Since P
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const mediaBucket = new aws.s3.Bucket("media-bucket", {
@@ -135,8 +135,8 @@ const mediaBucket = new aws.s3.Bucket("media-bucket", {
 const contentBucket = new aws.s3.Bucket("content-bucket");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const mediaBucket = new aws.s3.Bucket("media-bucket", {
@@ -145,24 +145,24 @@ const mediaBucket = new aws.s3.Bucket("media-bucket", {
 const contentBucket = new aws.s3.Bucket("content-bucket");
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 media_bucket = s3.Bucket('media-bucket', acl="public-read") # add acl
 content_bucket = s3.Bucket('content-bucket')
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 mediaBucket, _ := s3.NewBucket(ctx, "media-bucket", &s3.BucketArgs{Acl: "public-read"}) // add acl
 contentBucket, _ := s3.NewBucket(ctx, "content-bucket", nil)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Threading.Tasks;
@@ -187,7 +187,7 @@ public MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -199,7 +199,7 @@ Now, suppose we rename `content-bucket` to `app-bucket`.
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const mediaBucket = new aws.s3.Bucket("media-bucket", {
@@ -208,8 +208,8 @@ const mediaBucket = new aws.s3.Bucket("media-bucket", {
 const appBucket = new aws.s3.Bucket("app-bucket");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const mediaBucket = new aws.s3.Bucket("media-bucket", {
@@ -218,24 +218,24 @@ const mediaBucket = new aws.s3.Bucket("media-bucket", {
 const appBucket = new aws.s3.Bucket("app-bucket");
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 media_bucket = s3.Bucket('media-bucket', acl="public-read") # add acl
 app_bucket = s3.Bucket('app-bucket')
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 mediaBucket, _ := s3.NewBucket(ctx, "media-bucket", &s3.BucketArgs{Acl: "public-read"}) // add acl
 appBucket, _ := s3.NewBucket(ctx, "app-bucket", nil)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Threading.Tasks;
@@ -260,7 +260,7 @@ public MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

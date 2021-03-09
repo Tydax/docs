@@ -23,7 +23,7 @@ The Splunk provider supports several options for providing access to Splunk cred
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const splunk = require("@pulumi/splunk")
@@ -33,8 +33,8 @@ const adminSamlGroup = new splunk.AdminSamlGroups("demo-ts-group", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as splunk from "@pulumi/splunk";
@@ -45,8 +45,8 @@ const adminSamlGroup = new splunk.AdminSamlGroups("demo-ts-group", {
 
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_splunk as splunk
@@ -57,8 +57,8 @@ saml_group = splunk.AdminSamlGroups("demo-py-group", roles=[
 ])
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -83,8 +83,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -108,7 +108,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

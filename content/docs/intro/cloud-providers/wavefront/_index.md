@@ -23,7 +23,7 @@ The Wavefront provider supports several options for providing access to Wavefron
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const wavefront = require("@pulumi/wavefront")
@@ -33,8 +33,8 @@ const user = new wavefront.User("demo-ts", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as wavefront from "@pulumi/wavefront";
@@ -45,8 +45,8 @@ const user = new wavefront.User("demo-ts", {
 
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_wavefront as wavefront
@@ -55,8 +55,8 @@ user = wavefront.User("demo-py",
           email="test+py@mycompany.io")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -78,8 +78,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -99,7 +99,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

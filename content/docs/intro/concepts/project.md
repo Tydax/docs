@@ -68,7 +68,7 @@ When your Pulumi program references resources in the local filesystem, they are 
 
 {{< chooser language "javascript,typescript,python,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const myTask = new cloud.Task("myTask", {
@@ -77,8 +77,8 @@ const myTask = new cloud.Task("myTask", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 const myTask = new cloud.Task("myTask", {
@@ -87,8 +87,8 @@ const myTask = new cloud.Task("myTask", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 myTask = Task('myTask',
@@ -99,8 +99,8 @@ myTask = Task('myTask',
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var myTask = new Task("myTask", new TaskArgs
@@ -110,7 +110,7 @@ var myTask = new Task("myTask", new TaskArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -120,41 +120,41 @@ The {{< pulumi-getproject >}} function returns the name of the currently deployi
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let project = pulumi.getProject();
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let project = pulumi.getProject();
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 project = pulumi.get_project()
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 project := ctx.Project()
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var project = Deployment.Instance.ProjectName;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

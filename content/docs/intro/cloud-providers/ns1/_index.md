@@ -23,7 +23,7 @@ The NS1 provider supports several options for providing access to NS1 credential
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const ns1 = require("@pulumi/ns1")
@@ -33,8 +33,8 @@ const myZone = new ns1.Zone("demo-zone", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as ns1 from "@pulumi/ns1";
@@ -44,8 +44,8 @@ const myZone = new ns1.Zone("demo-zone", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_ns1 as ns1
@@ -55,8 +55,8 @@ zone = ns1.Zone("demo-zone",
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -79,8 +79,8 @@ func main() {
 
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -100,7 +100,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

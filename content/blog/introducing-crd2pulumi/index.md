@@ -81,7 +81,7 @@ choice.
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```sh
 $ crd2pulumi --nodejsPath ./crontabs crontabs.yaml
@@ -109,9 +109,9 @@ const myCronTab = new crontabs.stable.v1.CronTab("my-new-cron-object",
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```sh
 $ crd2pulumi --pythonPath ./crontabs crontabs.yaml
@@ -140,9 +140,9 @@ crontab_instance = crontabs.stable.v1.CronTab(
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```sh
 $ crd2pulumi --dotnetPath ./crontabs crontabs.yaml
@@ -181,9 +181,9 @@ class MyStack : Stack
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```sh
 $ crd2pulumi --goPath ./crontabs crontab.yaml
@@ -233,7 +233,7 @@ func main() {
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -250,7 +250,7 @@ what it looks like to create a `Certificate` CustomResource using our new types.
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```sh
 $ crd2pulumi --nodejsPath ./certificates certificate.yaml
@@ -285,9 +285,9 @@ new certificates.certmanager.v1beta1.Certificate("example-cert", {
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```sh
 $ crd2pulumi --pythonPath ./certificates certificate.yaml
@@ -325,9 +325,9 @@ _ = certmanager.certmanager.v1beta1.Certificate(
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```sh
 $ crd2pulumi --dotnetPath ./certificates certificate.yaml
@@ -370,15 +370,15 @@ class MyStack : Stack
                     }
                 }
             }
-        );  
+        );
     }
 }
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```sh
 $ crd2pulumi --goPath ./certificates certificate.yaml
@@ -437,7 +437,7 @@ func main() {
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

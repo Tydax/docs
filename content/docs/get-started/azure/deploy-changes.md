@@ -65,37 +65,37 @@ Duration: 4s
 
 You can check out your new static website at the URL in the `Outputs` section of your update or you can make a `curl` request and see the contents of your `index.html` object printed out in your terminal.
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```bash
 $ curl $(pulumi stack output staticEndpoint)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```bash
 $ curl $(pulumi stack output static_endpoint)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```bash
 $ curl $(pulumi stack output staticEndpoint)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```bash
 $ curl $(pulumi stack output StaticEndpoint)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 And you should see:
 

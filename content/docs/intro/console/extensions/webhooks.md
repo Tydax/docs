@@ -91,7 +91,7 @@ For examples in other languages, see [danharper/hmac-examples](https://github.co
 
 {{< chooser language "javascript,typescript,python,go" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 var crypto = require('crypto');
@@ -103,8 +103,8 @@ var hmacAlg = crypto.createHmac('sha256', sharedSecret);
 var expectedSignature = hmac.update(payloadBody).digest('hex');
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as crypto from "crypto";
@@ -118,8 +118,8 @@ const hmac = hmacAlg.update(payload).digest("hex");
 const result = crypto.timingSafeEqual(Buffer.from(webhookSig), Buffer.from(hmac));
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import hashlib
@@ -135,8 +135,8 @@ hash.hexdigest()
 expected_signature = base64.b64encode(hash.digest())
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 func computeSignature(payload []byte, secret string) string {
@@ -147,7 +147,7 @@ func computeSignature(payload []byte, secret string) string {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

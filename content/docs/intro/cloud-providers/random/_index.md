@@ -16,7 +16,7 @@ See the [full API documentation]({{< relref "/docs/reference/pkg/random" >}}) fo
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const random = require("@pulumi/random")
@@ -24,8 +24,8 @@ const random = require("@pulumi/random")
 const username = new random.Pet("my-user-name");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as random from "@pulumi/random";
@@ -33,8 +33,8 @@ import * as random from "@pulumi/random";
 const username = new random.Pet("my-user-name");
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_random as random
@@ -42,8 +42,8 @@ import pulumi_random as random
 username = random.Pet("my-user-name")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -64,8 +64,8 @@ func main() {
 
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -82,7 +82,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

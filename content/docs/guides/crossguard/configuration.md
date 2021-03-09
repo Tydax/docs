@@ -55,7 +55,7 @@ The below example shows a  `ResourceValidationPolicy` that has an optional `mess
 
 {{< chooser language "typescript,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 const examplePolicy: ResourceValidationPolicy = {
@@ -80,8 +80,8 @@ const examplePolicy: ResourceValidationPolicy = {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 def example_policy_validator(args: ResourceValidationArgs, report_violation: ReportViolation):
@@ -106,7 +106,7 @@ example_policy = ResourceValidationPolicy(
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -118,7 +118,7 @@ In some cases, you may need to require a property be set via configuration. This
 
 {{< chooser language "typescript,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 const examplePolicy: ResourceValidationPolicy = {
@@ -143,8 +143,8 @@ const examplePolicy: ResourceValidationPolicy = {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 def example_policy_validator(args: ResourceValidationArgs, report_violation: ReportViolation):
@@ -168,7 +168,7 @@ example_policy = ResourceValidationPolicy(
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

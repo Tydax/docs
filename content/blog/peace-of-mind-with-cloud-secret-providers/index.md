@@ -25,7 +25,7 @@ Pulumi supports encryption via the [Pulumi service]({{< relref "/docs/intro/conc
 First, create a KMS key. We also can set an alias on the key to make it easier to reference later:
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -47,9 +47,9 @@ export const keyArn = key.arn
 export const aliasArn = alias.arn
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 "use strict";
@@ -74,9 +74,9 @@ exports.keyArn = key.arn;
 exports.aliasArn = alias.arn;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -97,9 +97,9 @@ alias = kms.Alias("alias/stack-encryption-key",
 pulumi.export('key_arn',  key.arn)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -137,9 +137,9 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -171,7 +171,7 @@ class KeyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -201,7 +201,7 @@ To rectify this, we need to attach a Key Policy to the key. We can do this by up
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -257,9 +257,9 @@ export const aliasArn = alias.arn
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 "use strict";
@@ -323,9 +323,9 @@ exports.keyArn = key.arn;
 exports.aliasArn = alias.arn;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -379,9 +379,9 @@ pulumi.export('key_arn',  key.arn)
 pulumi.export('alias_arn', alias.arn)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -482,9 +482,9 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -546,7 +546,7 @@ class KeyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -595,7 +595,7 @@ To verify that the secret is indeed only accessible to the KMS key we created ea
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -604,9 +604,9 @@ const config = new pulumi.Config();
 export const superSecret = config.requireSecret("supersecret");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 "use strict";
@@ -616,9 +616,9 @@ const config = new pulumi.Config();
 exports.superSecret = config.requireSecret("supersecret");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -627,9 +627,9 @@ config = pulumi.Config()
 pulumi.export('superSecret',  config.require_secret("supersecret"))
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -650,9 +650,9 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -669,7 +669,7 @@ class AnotherStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -690,7 +690,7 @@ The final part is to make sure our values are stored encrypted inside the Pulumi
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -713,9 +713,9 @@ const superSecretObject = new aws.s3.BucketObject("secret", {
 })
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 "use strict";
@@ -738,9 +738,9 @@ const superSecretObject = new aws.s3.BucketObject("secret", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -757,9 +757,9 @@ bucket = s3.Bucket('bucket', acl="private")
 bucketObject = s3.BucketObject("secret", bucket=bucket.id, key="secret", content=superSecret)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 
@@ -796,9 +796,9 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -827,7 +827,7 @@ class AnotherStack : Stack
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

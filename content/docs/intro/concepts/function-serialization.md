@@ -32,7 +32,7 @@ The following example shows how you can create an AWS Lambda function or an Azur
 
 {{< chooser language "javascript,typescript" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let bucket = new aws.s3.Bucket("mybucket");
@@ -42,8 +42,8 @@ bucket.onObjectCreated("onObject", async (ev) => {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let bucket = new aws.s3.Bucket("mybucket");

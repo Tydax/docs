@@ -40,7 +40,7 @@ The specific details of how to prepare your registry differ by cloud provider, o
 
 {{% chooser cloud "aws,azure,gcp,digitalocean,docker" / %}}
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 <p></p>
 
@@ -395,9 +395,9 @@ ECR offers many additional options not shown here. This includes configuring adv
 
 > To view another cloud provider's registry details, [select a new cloud in the switcher above](#prepare-a-container-registry).
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 <p></p>
 
@@ -478,7 +478,7 @@ func main() {
         // [Placeholder 3: Build and publish the container image.]
         return nil
     })
-}        
+}
 ```
 
 {{< /choosable >}}
@@ -886,9 +886,9 @@ ACR offers advanced functionality not shown here, including configuring retentio
 
 > To view another cloud provider's registry details, [select a new cloud in the switcher above](#prepare-a-container-registry).
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 <p></p>
 
@@ -1134,9 +1134,9 @@ GCR uses Google Cloud Storage to store images, which may be configured separatel
 
 > To view another cloud provider's registry details, [select a new cloud in the switcher above](#prepare-a-container-registry).
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud digitalocean %}}
+{{< choosable cloud digitalocean >}}
 
 <p></p>
 
@@ -1208,7 +1208,7 @@ import (
     "encoding/json"
     "errors"
     "strings"
-    
+
     "github.com/pulumi/pulumi-digitalocean/sdk/v2/go/digitalocean"
     "github.com/pulumi/pulumi-docker/sdk/v2/go/docker"
     "github.com/pulumi/pulumi/sdk/v2/go/pulumi"
@@ -1500,9 +1500,9 @@ Each DigitalOcean account may have just a single registry, so you are likely to 
 
 > To view another cloud provider's registry details, [select a new cloud in the switcher above](#prepare-a-container-registry).
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud docker %}}
+{{< choosable cloud docker >}}
 
 <p></p>
 
@@ -1561,7 +1561,7 @@ import (
     "encoding/json"
     "errors"
     "strings"
-    
+
     "github.com/pulumi/pulumi-docker/sdk/v2/go/docker"
     "github.com/pulumi/pulumi/sdk/v2/go/pulumi"
 )
@@ -1713,7 +1713,7 @@ There are of course other ways to configure this authentication information, how
 
 > To view another cloud provider's registry details, [select a new cloud in the switcher above](#prepare-a-container-registry).
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 At this stage, we can run `pulumi up` to check that the program works and to provision any necessary cloud resources.
 
@@ -1915,12 +1915,12 @@ The Pulumi Docker `Image` component supports a number of additional options to c
 
 The same container image URLs exported above can be used as inputs to other resources, including infrastructure that will run your container inside of a container orchestration system such as Kubernetes, Amazon ECS, and so on.
 
-> This article assumes you already have a containerized environment to deploy to, like a Kubernetes cluster, and have [configured your project accordingly]({{< relref "/docs/intro/cloud-providers/kubernetes/setup" >}}). If not, you can provision one using Pulumi first. Pulumi supports many clouds and infrastructure resources, but here are a few starting points to get up and running with: 
+> This article assumes you already have a containerized environment to deploy to, like a Kubernetes cluster, and have [configured your project accordingly]({{< relref "/docs/intro/cloud-providers/kubernetes/setup" >}}). If not, you can provision one using Pulumi first. Pulumi supports many clouds and infrastructure resources, but here are a few starting points to get up and running with:
 
-- [AWS Elastic Container Service ECS]({{< relref "/docs/guides/crosswalk/aws/ecs" >}}), 
-- [AWS Elastic Kubernetes Service (EKS)]({{< relref "/docs/guides/crosswalk/aws/eks" >}}), 
-- [Azure Kubernetes Service (AKS)]({{< relref "/docs/tutorials/kubernetes/aks" >}}), 
-- [Google Cloud Kubernetes Engine (GKE)]({{< relref "/docs/tutorials/kubernetes/gke" >}}), 
+- [AWS Elastic Container Service ECS]({{< relref "/docs/guides/crosswalk/aws/ecs" >}}),
+- [AWS Elastic Kubernetes Service (EKS)]({{< relref "/docs/guides/crosswalk/aws/eks" >}}),
+- [Azure Kubernetes Service (AKS)]({{< relref "/docs/tutorials/kubernetes/aks" >}}),
+- [Google Cloud Kubernetes Engine (GKE)]({{< relref "/docs/tutorials/kubernetes/gke" >}}),
 - [DigitalOcean Kubernetes](https://www.digitalocean.com/community/tutorials/how-to-manage-digitalocean-and-kubernetes-infrastructure-with-pulumi).
 
 This example demonstrates deploying our Nginx web server as a load balanced service within Kubernetes. To do so, we'll declare our Kubernetes configuration, right inside of our existing program defined above, and export its resulting IP address:
@@ -2097,10 +2097,10 @@ func main() {
         ctx.Export("appIp", appSvc.Status.ApplyT(func(status *corev1.ServiceStatus) *string {
             return status.LoadBalancer.Ingress[0].Ip
         }))
-        
+
         return nil
     })
-}        
+}
 ```
 
 {{< /choosable >}}

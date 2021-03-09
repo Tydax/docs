@@ -21,7 +21,7 @@ Previously, the Pulumi CLI would assume `--yes` when used in non-interactive mod
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language "javascript,typescript" %}}
+{{< choosable language "javascript,typescript" >}}
 
 ### Update Dependencies
 
@@ -46,9 +46,9 @@ const version: Output<string> = pulumi.output(gcp.container.getEngineVersions())
 
 Optionally, you can use an `async` function [entrypoint]({{< relref "/docs/intro/languages/javascript#entrypoint" >}}) to more easily write `async/await` code throughout the rest of your program.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ### Update Dependencies
 
@@ -65,8 +65,8 @@ Then run `pip install`:
 pip install -r requirements.txt
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ### Update Dependencies
 
@@ -81,8 +81,8 @@ require (
 
 Then run `go mod download`
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ### Update Dependencies
 
@@ -108,7 +108,7 @@ becomes:
 var clientConfig = await Pulumi.Azure.Core.GetClientConfig.InvokeAsync();
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

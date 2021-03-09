@@ -17,17 +17,17 @@ Let's review some of the generated project files:
 - `Pulumi.yaml` defines the [project]({{< relref "/docs/intro/concepts/project" >}}).
 - `Pulumi.dev.yaml` contains [configuration]({{< relref "/docs/intro/concepts/config" >}}) values for the [stack]({{< relref "/docs/intro/concepts/stack" >}}) you initialized.
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 - `Program.cs` with a simple entry point.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 - {{< langfile >}} is the Pulumi program that defines your stack resources. Let's examine it.
 
 {{< chooser language "typescript,python,go,csharp" / >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -52,8 +52,8 @@ const storageAccountKeys = pulumi.all([resourceGroup.name, storageAccount.name])
 export const primaryStorageKey = storageAccountKeys.keys[0].value;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -81,8 +81,8 @@ primary_key = pulumi.Output.all(resource_group.name, account.name) \
 pulumi.export("primary_storage_key", primary_key)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -136,8 +136,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Threading.Tasks;
@@ -184,7 +184,7 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This Pulumi program creates an Azure resource group and storage account and then exports the storage account's primary key.
 

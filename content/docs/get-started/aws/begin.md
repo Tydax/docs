@@ -38,21 +38,21 @@ Next, install the required language runtime, if you have not already.
 
 {{< chooser language "javascript,typescript,python,go,csharp" / >}}
 
-{{% choosable language "javascript,typescript" %}}
+{{< choosable language "javascript,typescript" >}}
 {{< install-node >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 {{< install-python >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 {{< install-go >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "csharp,fsharp,visualbasic" %}}
+{{< choosable language "csharp,fsharp,visualbasic" >}}
 {{< install-dotnet >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
 Finally, configure Pulumi with AWS.
 
@@ -65,32 +65,32 @@ If you have previously <a href="https://docs.aws.amazon.com/cli/latest/userguide
 If you do not have the AWS CLI installed or plan on using Pulumi from within a CI/CD pipeline, <a href="https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys" target="_blank">retrieve your access key ID and secret access key</a> and then set the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables on your workstation.
 
 {{< chooser os "linux,macos,windows" >}}
-{{% choosable os linux %}}
+{{< choosable os linux >}}
 
 ```bash
 $ export AWS_ACCESS_KEY_ID=<YOUR_ACCESS_KEY_ID>
 $ export AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_ACCESS_KEY>
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 
 ```bash
 $ export AWS_ACCESS_KEY_ID=<YOUR_ACCESS_KEY_ID>
 $ export AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_ACCESS_KEY>
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os windows %}}
+{{< choosable os windows >}}
 
 ```powershell
 > $env:AWS_ACCESS_KEY_ID = "<YOUR_ACCESS_KEY_ID>"
 > $env:AWS_SECRET_ACCESS_KEY = "<YOUR_SECRET_ACCESS_KEY>"
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 For additional information on setting and using AWS credentials, see [AWS Setup]({{< relref "/docs/intro/cloud-providers/aws/setup" >}}).

@@ -28,7 +28,7 @@ A cluster is formed with a [control plane](https://kubernetes.io/docs/concepts/#
 To create a cluster for Kubernetes on a cloud provider, we need to create a VPC that will host the nodes required to deploy the Kubernetes cluster. Each cloud provider requires configuration specific to their implementation, and we'll cover their particular requirements.
 
 {{< chooser cloud "aws,azure,gcp" >}}
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 We declare a VPC to host our Kubernetes cluster and specify a public subnet, which is the gateway for the Kube-APIServer. We create the Kubernetes cluster with the VPC we declared and the VPC's default public subnets. The `desiredCapacity` parameter sets the desired number of EC2 `t2.medium` nodes. We also export the [*kubeconfig*](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/) file which we can use with *kubectl* to communicate with our Kubernetes cluster.
 
@@ -55,8 +55,8 @@ export const kubeconfig = cluster.kubeconfig;
 
 You can try out the code by following the complete [tutorial]({{< relref "/docs/tutorials/kubernetes/eks" >}}).
 
-{{% /choosable %}}
-{{% choosable cloud azure %}}
+{{< /choosable >}}
+{{< choosable cloud azure >}}
 
 In this example, we store the configuration variables in the Pulumi.<stack name>.yaml file, e.g.,
 
@@ -136,8 +136,8 @@ export const k8sProvider = new k8s.Provider("aksK8s", {
 
 The code above is an abbreviated example of this [AKS deployment](https://github.com/pulumi/examples/tree/master/classic-azure-ts-aks-helm) on GitHub.
 
-{{% /choosable %}}
-{{% choosable cloud gcp %}}
+{{< /choosable >}}
+{{< choosable cloud gcp >}}
 
 In this example, we store the configuration variables in the Pulumi.<stack name>.yaml file, e.g.,
 
@@ -247,7 +247,7 @@ export const k8sProvider = new k8s.Provider("gkeK8s", {
 
 You can try out the code by following the complete [tutorial]({{< relref "/docs/tutorials/kubernetes/gke" >}}).
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ## Conclusion

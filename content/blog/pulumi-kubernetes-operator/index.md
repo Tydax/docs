@@ -103,7 +103,7 @@ Choose your preferred language below, or check out [how to create Pulumi Stacks 
 [k8s-crd]: https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/
 
 {{< chooser language "typescript,python,go,csharp" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -134,8 +134,8 @@ const mystack = new k8s.apiextensions.CustomResource("my-stack", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -163,8 +163,8 @@ my_stack = apiextensions.CustomResource("my-stack",
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -237,9 +237,9 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -287,7 +287,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{% /chooser %}}
 
 ### Deploying an Amazon EKS Stack
@@ -296,7 +296,7 @@ Check out an example of creating a new AWS VPC and Kubernetes cluster
 on [AWS EKS][pulumi-aws-eks] as a Stack by the Operator.
 
 {{< chooser language "typescript,python,go,csharp" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -341,8 +341,8 @@ const mystack = new k8s.apiextensions.CustomResource("my-stack", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -382,8 +382,8 @@ my_stack = apiextensions.CustomResource("my-stack",
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System;
@@ -480,9 +480,9 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -549,7 +549,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{% /chooser %}}
 
 ## CI/CD Scenarios

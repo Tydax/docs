@@ -25,7 +25,7 @@ Instead, you can look up that ARM deployment by name and use one of its output v
 
 {{< chooser language "typescript,python,go,csharp" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as resources from "@pulumi/azure-native/resources";
@@ -52,8 +52,8 @@ const blob = new storage.Blob("zip", {
 export const blobUrl = blob.url;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -80,8 +80,8 @@ blob = storage.Blob('zip',
 pulumi.export('blob_url', blob.url)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -128,8 +128,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -171,7 +171,7 @@ class MyStack : Stack
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -219,7 +219,7 @@ Navigate to the [`arm2pulumi`](https://www.pulumi.com/arm2pulumi/) page, select 
 
 {{< chooser language "typescript,python,go,csharp" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -238,8 +238,8 @@ const storagecreatedbyarm = new azure_native.storage.StorageAccount("storagecrea
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -257,8 +257,8 @@ storagecreatedbyarm = azure_native.storage.StorageAccount("storagecreatedbyarm",
     ))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -290,8 +290,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -318,7 +318,7 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -332,7 +332,7 @@ Create a new Pulumi project, if you don't have one yet, and copy-paste the progr
 
 {{< chooser language "typescript,python,go,csharp" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as azure_native from "@pulumi/azure-native";
@@ -348,8 +348,8 @@ const storagecreatedbyarm = new azure_native.storage.StorageAccount("storagecrea
 }, { import: "/subscriptions/0292631f-7a9b-4142-90b2-96badd5eafa8/resourceGroups/existing-rg/providers/Microsoft.Storage/storageAccounts/storagecreatedbyarm" });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -369,8 +369,8 @@ storagecreatedbyarm = azure_native.storage.StorageAccount("storagecreatedbyarm",
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -403,8 +403,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -434,7 +434,7 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

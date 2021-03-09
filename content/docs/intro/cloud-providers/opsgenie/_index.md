@@ -23,7 +23,7 @@ The Opsgenie provider supports several options for providing access to Opsgenie 
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const opsgenie = require("@pulumi/opsgenie")
@@ -31,8 +31,8 @@ const opsgenie = require("@pulumi/opsgenie")
 const team = new opsgenie.Team('test');
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as opsgenie from "@pulumi/opsgenie";
@@ -40,8 +40,8 @@ import * as opsgenie from "@pulumi/opsgenie";
 const team = new opsgenie.Team('test');
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_opsgenie as opsgenie
@@ -49,8 +49,8 @@ import pulumi_opsgenie as opsgenie
 team = opsgenie.Team("test")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -70,8 +70,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -88,7 +88,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

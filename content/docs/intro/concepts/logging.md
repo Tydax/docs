@@ -11,7 +11,7 @@ The {{< pulumi-log >}} collection of functions allow you to log diagnostics, war
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 pulumi.log.info("message")
@@ -21,8 +21,8 @@ pulumi.log.warn("warning")
 pulumi.log.error("fatal error")
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 pulumi.log.info("message")
@@ -32,8 +32,8 @@ pulumi.log.warn("warning")
 pulumi.log.error("fatal error")
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 log.info("message")
@@ -43,8 +43,8 @@ log.warn("warning")
 log.error("fatal error")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 // Optional arguments for logging.
@@ -61,8 +61,8 @@ ctx.Log.Warn("warning", nil)
 ctx.Log.Error("fatal error", nil)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 Pulumi.Log.Info("message");
@@ -72,7 +72,7 @@ Pulumi.Log.Warn("warning");
 Pulumi.Log.Error("fatal error");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

@@ -61,45 +61,45 @@ Once the update has completed, you can verify the object was created in your buc
 
 {{< chooser language "javascript,typescript,python,go,csharp" / >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```bash
 $ aws s3 ls $(pulumi stack output bucketName)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```bash
 $ aws s3 ls $(pulumi stack output bucketName)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```bash
 $ aws s3 ls $(pulumi stack output bucket_name)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```bash
 $ aws s3 ls $(pulumi stack output bucketName)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```bash
 $ aws s3 ls $(pulumi stack output BucketName)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Notice that your `index.html` file has been added to the bucket:
 
@@ -107,7 +107,7 @@ Notice that your `index.html` file has been added to the bucket:
 2020-08-27 12:30:24         70 index.html
 ```
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 Now that your `index.html` is in your bucket, modify the program file to have the bucket serve `index.html` as a static website. First, set the `website` property on your bucket.
 
 ```javascript
@@ -135,9 +135,9 @@ Finally, at the end of the program file, export the resulting bucket’s endpoin
 exports.bucketEndpoint = pulumi.interpolate`http://${bucket.websiteEndpoint}`;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 Now that your `index.html` is in your bucket, modify the program file to have the bucket serve `index.html` as a static website. First, set the `website` property on your bucket.
 
 ```typescript
@@ -165,9 +165,9 @@ Finally, at the end of the program file, export the resulting bucket’s endpoin
 export const bucketEndpoint = pulumi.interpolate`http://${bucket.websiteEndpoint}`;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 Now that your `index.html` is in your bucket, modify the program file to have the bucket serve `index.html` as a static website. First, set the `website` property on your bucket.
 
 ```python
@@ -195,9 +195,9 @@ Finally, at the end of the program file, export the resulting bucket’s endpoin
 pulumi.export('bucket_endpoint', pulumi.Output.concat('http://', bucket.website_endpoint))
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 Now that your `index.html` is in your bucket, modify the program to have the bucket serve `index.html` as a static website. First, set the `Website` property on your bucket.
 
 ```go
@@ -225,9 +225,9 @@ Finally, at the end of the program file, export the resulting bucket’s endpoin
 ctx.Export("bucketEndpoint", pulumi.Sprintf("http://%s", bucket.WebsiteEndpoint))
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 Now that your `index.html` is in your bucket, modify the program to have the bucket serve `index.html` as a static website. First, set the `Website` property on your bucket.
 
 ```csharp
@@ -270,7 +270,7 @@ this.BucketEndpoint = Output.Format($"http://{bucket.WebsiteEndpoint}");
 [Output] public Output<string> BucketEndpoint { get; set; }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Now update your stack to have your S3 bucket serve your `index.html` file as a static website.
 
@@ -325,45 +325,45 @@ Duration: 12s
 
 Finally, you can check out your new static website at the URL in the `Outputs` section of your update or you can make a `curl` request and see the contents of your `index.html` object printed out in your terminal.
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```bash
 $ curl $(pulumi stack output bucketEndpoint)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```bash
 $ curl $(pulumi stack output bucketEndpoint)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```bash
 $ curl $(pulumi stack output bucket_endpoint)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```bash
 $ curl $(pulumi stack output bucketEndpoint)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```bash
 $ curl $(pulumi stack output BucketEndpoint)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 And you should see:
 

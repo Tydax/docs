@@ -13,17 +13,17 @@ In this tutorial, we will show you how to use JavaScript or Python to deploy a s
 
 {{< chooser language "javascript,typescript,python,csharp" >}}
 
-{{% choosable language "javascript,typescript" %}}
+{{< choosable language "javascript,typescript" >}}
 {{< install-node >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 {{< install-python >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "csharp,fsharp,visualbasic" %}}
+{{< choosable language "csharp,fsharp,visualbasic" >}}
 {{< install-dotnet >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -35,38 +35,38 @@ Create a project directory, `webserver`, and change into it. Run [`pulumi new aw
 
 {{< chooser language "javascript,typescript,python,csharp" / >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```bash
 $ mkdir webserver && cd webserver
 $ pulumi new aws-javascript --name myproject
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```bash
 $ mkdir webserver && cd webserver
 $ pulumi new aws-typescript --name myproject
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```bash
 $ mkdir webserver && cd webserver
 $ pulumi new aws-python --name myproject
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```bash
 $ mkdir webserver && cd webserver
 $ pulumi new aws-csharp --name myproject
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 ### Step 2: Create an EC2 instance with SSH access
 
@@ -74,7 +74,7 @@ Open {{< langfile >}} and replace the contents with the following:
 
 {{< chooser language "javascript,typescript,python,csharp" / >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const aws = require("@pulumi/aws");
@@ -106,8 +106,8 @@ exports.publicIp = server.publicIp;
 exports.publicHostName = server.publicDns;
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -139,8 +139,8 @@ export const publicIp = server.publicIp;
 export const publicHostName = server.publicDns;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -166,8 +166,8 @@ pulumi.export('publicIp', server.public_ip)
 pulumi.export('publicHostName', server.public_dns)
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -233,7 +233,7 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 > **Note:** The example configuration is designed to work on most EC2 accounts, with access to a default VPC. For EC2 Classic users, please use t1.micro for `size`.
 
@@ -325,7 +325,7 @@ script to run a simple HTTP server at startup.
 
 {{< chooser language "javascript,typescript,python,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 ...
@@ -353,8 +353,8 @@ let server = new aws.ec2.Instance("web-server-www", {
 ...
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 ...
@@ -382,8 +382,8 @@ const server = new aws.ec2.Instance("webserver-www", {
 ...
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 ...
@@ -412,8 +412,8 @@ server = ec2.Instance('webserver-www',
 ...
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 //...
@@ -453,7 +453,7 @@ var server = new Aws.Ec2.Instance("webserver-www", new Aws.Ec2.InstanceArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

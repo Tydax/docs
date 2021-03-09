@@ -40,7 +40,7 @@ If you are migrating from Azure Resource Manager templates, read our [Migrate Fr
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as resources from "@pulumi/azure-native/resources";
@@ -48,9 +48,9 @@ import * as resources from "@pulumi/azure-native/resources";
 const resourceGroup = new resources.ResourceGroup("resourceGroup");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_azure_native as azure_native
@@ -58,9 +58,9 @@ import pulumi_azure_native as azure_native
 resource_group = azure_native.resources.ResourceGroup("resourceGroup")
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -81,9 +81,9 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -104,7 +104,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

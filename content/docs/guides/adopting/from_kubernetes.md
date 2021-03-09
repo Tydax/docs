@@ -39,7 +39,7 @@ This Pulumi program uses `ConfigFile` to read that YAML file, provision the reso
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let k8s = require("@pulumi/kubernetes");
@@ -56,8 +56,8 @@ module.exports = {
 };
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as k8s from "@pulumi/kubernetes";
@@ -72,8 +72,8 @@ const frontend = guestbook.getResource("v1/Service", "frontend");
 export const privateIp = frontend.spec.clusterIP;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -87,8 +87,8 @@ frontend = guestbook.get_resource('v1/Service', 'frontend')
 pulumi.export('private_ip', frontend.spec['cluster_ip'])
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -117,8 +117,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System;
@@ -153,7 +153,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -198,7 +198,7 @@ This Pulumi program uses `ConfigGroup` to read these YAML files, provision the r
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let k8s = require("@pulumi/kubernetes");
@@ -216,8 +216,8 @@ module.exports = {
 };
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as k8s from "@pulumi/kubernetes";
@@ -233,16 +233,16 @@ const frontend = guestbook.getResource("v1/Service", "frontend");
 export const privateIp = frontend.spec.clusterIP;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 # ConfigGroup is not yet available in Python:
 # https://github.com/pulumi/pulumi-kubernetes/issues/770
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -273,8 +273,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System;
@@ -310,7 +310,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -374,7 +374,7 @@ To illustrate provisioning a Helm Chart using Pulumi, we will deploy the `stable
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let k8s = require("@pulumi/kubernetes");
@@ -393,8 +393,8 @@ module.exports = {
 };
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as k8s from "@pulumi/kubernetes";
@@ -411,8 +411,8 @@ const frontend = wordpress.getResource("v1/Service", "wpdev-wordpress");
 export const frontendIp = frontend.status.loadBalancer.ingress[0].ip;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -430,8 +430,8 @@ frontend = wordpress.get_resource('v1/Service', 'wpdev-wordpress')
 pulumi.export('frontend_ip', frontend.status.load_balancer.ingress[0].ip)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -466,8 +466,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -503,7 +503,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -561,7 +561,7 @@ This example provisions a simple load-balanced NGINX service using a general pur
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let k8s = require("@pulumi/kubernetes");
@@ -592,8 +592,8 @@ let svc = new k8s.core.v1.Service("nginx-svc", {
 }, { provider: renderProvider });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as k8s from "@pulumi/kubernetes";
@@ -624,8 +624,8 @@ const svc = new k8s.core.v1.Service("nginx-svc", {
 }, { provider: renderProvider });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi import ResourceOptions
@@ -658,8 +658,8 @@ svc = Service('nginx-svc',
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -719,8 +719,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -794,7 +794,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -848,7 +848,7 @@ The Kubernetes Guestbook by default does not assign a load balancer for the fron
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 ...
@@ -867,8 +867,8 @@ module.exports = {
 };
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 ...
@@ -884,8 +884,8 @@ const guestbook = new k8s.yaml.ConfigFile("guestbook", {
 export const publicIp = frontend.status.loadBalancer.ingress[0].ip;
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 ...
@@ -898,8 +898,8 @@ guestbook = k8s.yaml.ConfigFile('guestbook', 'guestbook-all-in-one.yaml',
 pulumi.export('public_ip', frontend.status['load_balancer']['ingress'][0]['ip'])
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 ...
@@ -922,8 +922,8 @@ ctx.Export("publicIP", frontend.Status.LoadBalancer().Ingress().Index(pulumi.Int
 ...
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 ...
@@ -954,7 +954,7 @@ return new Dictionary<string, object?>
 ...
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

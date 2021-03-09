@@ -44,22 +44,22 @@ If you're looking for some example Policy Packs, take a look at these:
 
 {{< chooser language "typescript,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 * [AWS](https://github.com/pulumi/examples/tree/master/policy-packs/aws-ts)
 * [Azure](https://github.com/pulumi/examples/tree/master/policy-packs/azure-ts)
 * [Google Cloud](https://github.com/pulumi/examples/tree/master/policy-packs/gcp-ts)
 * [Kubernetes](https://github.com/pulumi/examples/tree/master/policy-packs/kubernetes-ts)
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 * [AWS](https://github.com/pulumi/examples/tree/master/policy-packs/aws-python)
 * [Azure](https://github.com/pulumi/examples/tree/master/policy-packs/azure-python)
 * [Google Cloud](https://github.com/pulumi/examples/tree/master/policy-packs/gcp-python)
 * [Kubernetes](https://github.com/pulumi/examples/tree/master/policy-packs/kubernetes-python)
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

@@ -86,32 +86,32 @@ Existing Python Policy Packs can opt-in to using the built-in virtual environmen
 
 {{< chooser os "macos,windows,linux" >}}
 
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 
 ```bash
 $ python3 -m venv venv
 $ venv/bin/pip install -r requirements.txt
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os linux %}}
+{{< choosable os linux >}}
 
 ```bash
 $ python3 -m venv venv
 $ venv/bin/pip install -r requirements.txt
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os windows %}}
+{{< choosable os windows >}}
 
 ```bat
 > python -m venv venv
 > venv\Scripts\pip install -r requirements.txt
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -131,29 +131,29 @@ To install a new dependency in the virtual environment, add an entry to `require
 
 {{< chooser os "macos,windows,linux" >}}
 
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 
 ```bash
 $ venv/bin/pip install -r requirements.txt
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os linux %}}
+{{< choosable os linux >}}
 
 ```bash
 $ venv/bin/pip install -r requirements.txt
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os windows %}}
+{{< choosable os windows >}}
 
 ```bat
 > python -m venv venv
 > venv\Scripts\pip install -r requirements.txt
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}

@@ -4,7 +4,7 @@ h1: "Easily Create and Manage AWS EKS Kubernetes Clusters with Pulumi"
 date: "2021-01-28"
 meta_desc: "Use Pulumi to easily deploy new clusters, manage AWS resources, and deploy Kubernetes apps. See how to provision an EKS cluster with a single CLI command."
 meta_image: "pulumi_k8s.png"
-authors: 
+authors:
   - luke-hoban
   - levi-blackstone
 tags:
@@ -81,7 +81,7 @@ in each of Pulumi's supported languages:
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as eks from "@pulumi/eks";
@@ -98,9 +98,9 @@ const cluster = new eks.Cluster("cluster", {
 export const kubeconfig = cluster.kubeconfig;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -119,9 +119,9 @@ cluster = eks.Cluster(
 pulumi.export("kubeconfig", cluster.kubeconfig)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System;
@@ -156,9 +156,9 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -191,7 +191,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -205,37 +205,37 @@ the cluster need access to an Amazon S3 bucket, create a new
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 const bucket = new aws.s3.Bucket("assets");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 bucket = aws.s3.Bucket("assets")
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 var bucket = new Aws.S3.Bucket("bucket");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 bucket, err := s3.NewBucket(ctx, "bucket", &s3.BucketArgs{})
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -245,7 +245,7 @@ Kubernetes provider pointing at the newly provisioned EKS cluster:
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 const wordpress = new k8s.helm.v3.Chart("wpdev", {
@@ -257,9 +257,9 @@ const wordpress = new k8s.helm.v3.Chart("wpdev", {
 }, { providers: { kubernetes: cluster.provider }});
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 wordpress = Chart(
@@ -275,9 +275,9 @@ wordpress = Chart(
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 var wordpress = new Chart("wpdev", new ChartArgs
@@ -294,9 +294,9 @@ var wordpress = new Chart("wpdev", new ChartArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 wordpress, err := helm.NewChart(ctx, "wpdev", helm.ChartArgs{
@@ -308,7 +308,7 @@ wordpress, err := helm.NewChart(ctx, "wpdev", helm.ChartArgs{
 }, pulumi.Provider(cluster.Provider))
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

@@ -20,7 +20,7 @@ There are three types of `Asset` objects:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let fileAsset = new pulumi.asset.FileAsset("./file.txt");
@@ -28,8 +28,8 @@ let stringAsset = new pulumi.asset.StringAsset("Hello, world!");
 let remoteAsset = new pulumi.asset.RemoteAsset("http://worldclockapi.com/api/json/est/now");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let fileAsset = new pulumi.asset.FileAsset("./file.txt");
@@ -37,8 +37,8 @@ let stringAsset = new pulumi.asset.StringAsset("Hello, world!");
 let remoteAsset = new pulumi.asset.RemoteAsset("http://worldclockapi.com/api/json/est/now");
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 file_asset = pulumi.FileAsset("./file.txt")
@@ -46,8 +46,8 @@ string_asset = pulumi.StringAsset("Hello, world!")
 remote_asset = pulumi.RemoteAsset("http://worldclockapi.com/api/json/est/now")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 fileAsset := pulumi.NewFileAsset("./file.txt")
@@ -55,8 +55,8 @@ stringAsset := pulumi.NewStringAsset("Hello, world!")
 remoteAsset := pulumi.NewRemoteAsset("http://worldclockapi.com/api/json/est/now")
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -66,7 +66,7 @@ var stringAsset = new StringAsset("Hello, world!");
 var remoteAsset = new RemoteAsset("http://worldclockapi.com/api/json/est/now");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -74,7 +74,7 @@ Any of these assets can be passed to a resource accepting an `Asset` as input.
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let object = new aws.s3.BucketObject(`obj`, {
@@ -84,8 +84,8 @@ let object = new aws.s3.BucketObject(`obj`, {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let object = new aws.s3.BucketObject("obj", {
@@ -95,8 +95,8 @@ let object = new aws.s3.BucketObject("obj", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 obj = aws.s3.BucketObject("obj",
@@ -105,8 +105,8 @@ obj = aws.s3.BucketObject("obj",
     source=fileAsset)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 obj, err := s3.NewBucketObject(ctx, "obj", &s3.BucketObjectArgs{
@@ -116,8 +116,8 @@ obj, err := s3.NewBucketObject(ctx, "obj", &s3.BucketObjectArgs{
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var obj = new Aws.S3.BucketObject("obj", new Aws.S3.BucketObjectArgs
@@ -128,7 +128,7 @@ var obj = new Aws.S3.BucketObject("obj", new Aws.S3.BucketObjectArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -142,7 +142,7 @@ There are three types of `Archive` objects:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let fileArchive = new pulumi.asset.FileArchive("./file.zip");
@@ -153,8 +153,8 @@ let assetArchive = new pulumi.asset.AssetArchive({
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let fileArchive = new pulumi.asset.FileArchive("./file.zip");
@@ -165,8 +165,8 @@ let assetArchive = new pulumi.asset.AssetArchive({
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 file_archive = pulumi.FileArchive("./file.zip")
@@ -177,8 +177,8 @@ asset_archive = pulumiAssetArchive({
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 fileArchive := pulumi.NewFileArchive("./file.zip")
@@ -189,8 +189,8 @@ assetArchive := pulumi.NewAssetArchive(map[string]interface{}{
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -204,7 +204,7 @@ var assetArchive = new AssetArchive(new Dictionary<string, string>
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -214,7 +214,7 @@ Any of these archives can be passed to a resource accepting an `Archive` as inpu
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let fn = new aws.lambda.Function(`fn`, {
@@ -225,8 +225,8 @@ let fn = new aws.lambda.Function(`fn`, {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let fn = new aws.lambda.Function(`fn`, {
@@ -237,8 +237,8 @@ let fn = new aws.lambda.Function(`fn`, {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 fn = lambda_.Function("fn",
@@ -248,8 +248,8 @@ fn = lambda_.Function("fn",
     code=fileArchive)
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 fn, err := lmabda.NewFunction(ctx, "fn", &lambda.FunctionArgs{
@@ -260,8 +260,8 @@ fn, err := lmabda.NewFunction(ctx, "fn", &lambda.FunctionArgs{
 })
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var fn = new Aws.Lambda.Function("fn", new Aws.Lambda.FunctionArgs
@@ -273,6 +273,6 @@ var fn = new Aws.Lambda.Function("fn", new Aws.Lambda.FunctionArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}

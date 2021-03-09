@@ -7,7 +7,7 @@ menu:
     identifier: clouds-equinix-metal
     weight: 2
 
-aliases: 
+aliases:
   - "/docs/reference/clouds/packet/"
   - "/docs/intro/cloud-providers/packet/"
 ---
@@ -28,7 +28,7 @@ The Equinix Metal provider supports several options for providing access to Equi
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 import * as metal from "@pulumi/equinix-metal";
@@ -38,8 +38,8 @@ const project = new metal.Project("my-project", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as metal from "@pulumi/equinix-metal";
@@ -49,8 +49,8 @@ const project = new metal.Project("my-project", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_equinix_metal as metal
@@ -59,8 +59,8 @@ project = metal.Project("my-project",
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -82,8 +82,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Threading.Tasks;
@@ -102,7 +102,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

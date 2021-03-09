@@ -72,7 +72,7 @@ The following example uses an empty constructor. If you are writing code that wi
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let config = new pulumi.Config();
@@ -81,8 +81,8 @@ let lucky = config.getNumber("lucky") || 42;
 console.log(`Hello, ${name} -- I see your lucky number is ${lucky}!`);
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 let config = new pulumi.Config();
@@ -91,8 +91,8 @@ let lucky = config.getNumber("lucky") || 42;
 console.log(`Hello, ${name} -- I see your lucky number is ${lucky}!`);
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 config = pulumi.Config();
@@ -101,8 +101,8 @@ lucky = config.get_int('lucky') or 42
 print(f'Hello, {name} -- I see your lucky number is {lucky}!')
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -125,8 +125,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var config = new Pulumi.Config();
@@ -135,7 +135,7 @@ var lucky = config.GetInt32("lucky") ?? 42;
 Console.WriteLine($"Hello, {name} -- I see your lucky number is {lucky}!");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -170,7 +170,7 @@ The `data` config can be accessed in your Pulumi program using:
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 let config = new pulumi.Config();
@@ -178,8 +178,8 @@ let data = config.requireObject("data");
 console.log(`Active: ${data.active}`);
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 interface Data {
@@ -192,8 +192,8 @@ let data = config.requireObject<Data>("data");
 console.log(`Active: ${data.active}`);
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 config = pulumi.Config()
@@ -201,8 +201,8 @@ data = config.require_object("data")
 print("Active:", data.get("active"))
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -228,8 +228,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 var config = new Pulumi.Config();
@@ -237,6 +237,6 @@ var data = config.RequireObject<JsonElement>("data");
 Console.WriteLine($"Active: {data.GetProperty("active")}");
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}

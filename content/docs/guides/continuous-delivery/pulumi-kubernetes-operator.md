@@ -78,7 +78,7 @@ The role permissions for the operator can be adjusted to control what in-cluster
 Choose your preferred language below, or check out [Create Pulumi Stacks using kubectl][stacks-use-kubectl].
 
 {{< chooser language "typescript,python,go,csharp" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -109,8 +109,8 @@ const mystack = new k8s.apiextensions.CustomResource("my-stack", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -138,8 +138,8 @@ my_stack = apiextensions.CustomResource("my-stack",
 )
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -212,9 +212,9 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -262,7 +262,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{% /chooser %}}
 
 [stacks-use-kubectl]: https://github.com/pulumi/pulumi-kubernetes-operator/blob/master/docs/create-stacks-using-kubectl.md

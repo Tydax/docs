@@ -38,7 +38,7 @@ In addition to the tutorial, several interesting examples are available complete
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const gcp = require("@pulumi/gcp")
@@ -46,8 +46,8 @@ const gcp = require("@pulumi/gcp")
 const bucket = new gcp.storage.Bucket("my-bucket");
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as gcp from "@pulumi/gcp";
@@ -55,8 +55,8 @@ import * as gcp from "@pulumi/gcp";
 const bucket = new gcp.storage.Bucket("my-bucket");
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi_gcp import storage
@@ -64,8 +64,8 @@ from pulumi_gcp import storage
 bucket = storage.Bucket('my-bucket')
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import "github.com/pulumi/pulumi-gcp/sdk/v3/go/gcp/storage"
@@ -82,8 +82,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Threading.Tasks;
@@ -99,7 +99,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

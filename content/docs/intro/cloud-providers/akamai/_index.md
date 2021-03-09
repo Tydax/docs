@@ -23,7 +23,7 @@ The Akamai provider supports several options for providing access to Akamai cred
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const akamai = require("@pulumi/akamai")
@@ -40,8 +40,8 @@ const tsdomain = new akamai.properties.EdgeHostName("test", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as akamai from "@pulumi/akamai";
@@ -58,8 +58,8 @@ const tsdomain = new akamai.properties.EdgeHostName("test", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_akamai as akamai
@@ -75,8 +75,8 @@ pydomain = akamai.properties.EdgeHostName("test",
           ipv4="true")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -114,8 +114,8 @@ func main() {
 
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -144,7 +144,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

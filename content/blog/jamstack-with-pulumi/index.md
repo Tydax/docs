@@ -91,7 +91,7 @@ Using Pulumi to deploy Infrastructure as Code, we can create and build our infra
 To get started building our infrastructure, we’ll download the Python example for setting up a static website with AWS. There are many [examples on our GitHub repository](https://github.com/pulumi/), but we can clone just the AWS Static Website example using a [sparse checkout](https://git-scm.com/docs/git-sparse-checkout) which clones only the directory we specify,
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```bash
 $ cd hugo
@@ -105,8 +105,8 @@ $ echo aws-ts-static-website >> .git/info/sparse-checkout
 $ git pull origin master
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```bash
 $cd hugo
@@ -120,7 +120,7 @@ $ echo aws-py-static-website >> .git/info/sparse-checkout
 $ git pull origin master
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 Your project directory should look like this:
@@ -138,22 +138,22 @@ Now that we have a project to build the website, we will need to configure it so
 1. Create a new stack or instance for testing:
 
     {{< chooser language "typescript,python" >}}
-    {{% choosable language typescript %}}
+    {{< choosable language typescript >}}
 
 ```bash
 $ cd aws-ts-static-website
 $ pulumi stack init website-testing
 ```
 
-    {{% /choosable %}}
-    {{% choosable language python %}}
+    {{< /choosable >}}
+    {{< choosable language python >}}
 
 ```bash
 $ cd aws-py-static-website
 $ pulumi stack init website-testing
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
     {{< /chooser >}}
 
 1. Set the AWS region, you can use any region:
@@ -165,14 +165,14 @@ $ pulumi stack init website-testing
 1. Install [dependencies](https://www.pulumi.com/docs/intro/concepts/how-pulumi-works/) for our Pulumi program.
 
     {{< chooser language "typescript,python" >}}
-    {{% choosable language typescript %}}
+    {{< choosable language typescript >}}
 
 ```bash
 $ npm install
 ```
 
-    {{% /choosable %}}
-    {{% choosable language python %}}
+    {{< /choosable >}}
+    {{< choosable language python >}}
 
 ```bash
 $ python3 -m venv venv
@@ -180,7 +180,7 @@ $ source venv/bin/activate
 $ pip3 install -r requirements.txt
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
     {{< /chooser >}}
 
 1. Edit `Pulumi.website-testing.yaml` to set the configuration parameters. The first parameter is the `targetDomain`, which is the domain for the website (e.g., www.example.com).  The parent domain must be a [Route53 Hosted Zone](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/migrate-dns-domain-in-use.html) in the same AWS account as where the Pulumi program is running. The second parameter is `pathToWebsiteContents`, the relative path to the website’s contents created in Hugo.
@@ -230,7 +230,7 @@ The website has been deployed, and you can browse it with your domain URL. Since
 Let's take a look at how the cloud resources are created, configured, and populated. First up is the S3 bucket where the static website is stored.
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // contentBucket is the S3 bucket that the website's contents will be stored in.
@@ -247,8 +247,8 @@ const contentBucket = new aws.s3.Bucket("contentBucket",
     });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 # Create an S3 bucket configured as a website bucket.
@@ -261,13 +261,13 @@ content_bucket = pulumi_aws.s3.Bucket('contentBucket',
     })
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 We add the website content by crawling the `public` directory and converting the files to S3 objects.
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // crawlDirectory recursive crawls the provided directory, applying the provided function
@@ -309,8 +309,8 @@ crawlDirectory(
     });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 def crawl_directory(content_dir, f):
@@ -347,13 +347,13 @@ def bucket_object_converter(filepath):
 crawl_directory(web_contents_root_path, bucket_object_converter)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 Now that we have our content in an S3 bucket, we turn to configure and create the CDN that serves the website. The first task is to create an SSL/TLS certificate based on the domain name hosted on Route 53 DNS if we didn't specify the optional `certificateArn` config value of an existing certificate.
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 let certificateArn: pulumi.Input<string> = config.certificateArn!;
@@ -374,8 +374,8 @@ if (config.certificateArn === undefined) {
     }, { provider: eastRegion });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 if certificate_arn is None:
@@ -388,13 +388,13 @@ if certificate_arn is None:
         domain_name=target_domain, validation_method='DNS', opts=ResourceOptions(provider=east_region))
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 We also create a bucket to hold the CDN logs for the website.
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // logsBucket is an S3 bucket that will contain the CDN's request logs.
@@ -405,21 +405,21 @@ const logsBucket = new aws.s3.Bucket("requestLogs",
     });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 # Create a logs bucket for the CloudFront logs
 logs_bucket = pulumi_aws.s3.Bucket('requestLogs', bucket=f'{target_domain}-logs', acl='private')
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 Now that we have an SSL/TLS certificate and a S3 bucket to store logs, we can create the CDN. In the CDN resource definition, `origin` sets the S3 bucket as the content source, the domain name, and the ports for serving content. We can also set the cache_behavior, the price class, access restrictions, the logging configuration, and other parameters.
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // distributionArgs configures the CloudFront distribution. Relevant documentation:
@@ -499,8 +499,8 @@ const distributionArgs: aws.cloudfront.DistributionArgs = {
 const cdn = new aws.cloudfront.Distribution("cdn", distributionArgs);
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 # Create the CloudFront distribution
@@ -561,13 +561,13 @@ cdn = pulumi_aws.cloudfront.Distribution('cdn',
     wait_for_deployment=False)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 To complete the deployment, we set the `alias_a_record` to point the CDN to our domain name in Route 53.
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // Creates a new Route53 DNS record pointing the domain to the CloudFront distribution.
@@ -594,8 +594,8 @@ function createAliasRecord(
 const aRecord = createAliasRecord(config.targetDomain, cdn);
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 def create_alias_record(target_domain, distribution):
@@ -620,7 +620,7 @@ def create_alias_record(target_domain, distribution):
 alias_a_record = create_alias_record(target_domain, cdn)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 In a single program, we've created all the cloud resources to deploy our content and served it via a CDN.

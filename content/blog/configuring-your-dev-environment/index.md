@@ -39,7 +39,7 @@ Once you've made these choices, you can follow this guide in a choose-your-own-a
 Let's start with the package manager. We'll use it to install and manage all the software we need, including cloud provider CLIs, programming languages, editors, and Pulumi. Choose your operating system below.
 
 {{< chooser os "macos,windows,linux" >}}
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 [Homebrew](https://docs.brew.sh/Installation) is the most popular package manager for macOS. The Command Line Tools (CLT) for XCode is required to install and build Homebrew. Install the XCode Tools first, then install Homebrew from the command line.
 
 ```bash
@@ -48,9 +48,9 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 ```
 
 If you are uncomfortable with downloading and running an online shell script (with good reason), Homebrew provides an [alternate installation method](https://docs.brew.sh/Installation#alternative-installs).
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os windows %}}
+{{< choosable os windows >}}
 [Chocolatey](https://chocolatey.org/) is a popular package manager for Windows. It should be installed using an [administrative shell](https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/).
 
 Make sure that [`Get-ExecutionPolicy`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.1) is not restricted.
@@ -71,8 +71,8 @@ To check if it's installed type:
 > choco
 ```
 
-{{% /choosable %}}
-{{% choosable os linux %}}
+{{< /choosable >}}
+{{< choosable os linux >}}
 
 Linux distributions include a package manager, [apt](https://wiki.debian.org/Apt) for Debian based distributions or  [yum](https://www.redhat.com/sysadmin/how-manage-packages) for Red Hat-based Linux systems. However, they are primarily used for application and system management.
 
@@ -88,7 +88,7 @@ To add Homebrew to your `PATH` and your bash shell profile script (`~/.profile` 
 $ brew install hello
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ## Setting up a cloud account
@@ -98,7 +98,7 @@ The first task is signing up for an account. Once you have that out of the way, 
 ### macOS
 
 {{< chooser cloud "aws,azure,gcp" >}}
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 We'll use brew to install AWS CLI version 2 and verify if it's installed by checking the version.
 
 ```bash
@@ -123,9 +123,9 @@ Default output format [None]:
 ```
 
 This creates a `~/.aws/credentials` file used by the AWS CLI to authenticate requests.
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 We'll use brew to install Azure CLI and check if it's installed.
 
 ```bash
@@ -146,8 +146,8 @@ The Azure client is authenticated and ready to use.
 Pulumi uses the Azure SDK to authenticate requests. Your AWS access keys are never sent to pulumi.com.
 {{% /notes %}}
 
-{{% /choosable %}}
-{{% choosable cloud gcp %}}
+{{< /choosable >}}
+{{< choosable cloud gcp >}}
 We'll use brew to install the Google Cloud SDK and CLI.
 
 ```bash
@@ -184,14 +184,14 @@ gcloud init
 {{% notes type="info" %}}
 Pulumi uses the Google Cloud SDK to authenticate requests. Your AWS access keys are never sent to pulumi.com.
 {{% /notes %}}
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ### Windows
 
 {{< chooser cloud "aws,azure,gcp" >}}
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 We'll use chocolatey to install AWS CLI version 2 and check if it's installed. Open a `cmd` Command Prompt as Administrator:
 
 ```cmd
@@ -218,9 +218,9 @@ Default output format [None]:
 ```
 
 This will create the `~/.aws/credentials` file used by the AWS CLI to authenticate requests.
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 We'll use chocolatey to install Azure CLI and check if it's installed. Open a `cmd` Command Prompt as Administrator:
 
 ```cmd
@@ -240,9 +240,9 @@ The Azure client will open a browser window and prompt you to sign-in to your ac
 Pulumi uses the Azure SDK to authenticate requests. Your AWS access keys are never sent to pulumi.com.
 {{% /notes %}}
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 We'll use chocolatey to install the Google Cloud SDK and CLI.
 
 ```cmd
@@ -288,13 +288,13 @@ A browser window will open to authenticate your client.
 Pulumi uses the Google Cloud SDK to authenticate requests. Your AWS access keys are never sent to pulumi.com.
 {{% /notes %}}
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ### Linux
 
 {{< chooser cloud "aws,azure,gcp" >}}
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 We'll use brew to install AWS CLI version 2 and check if it's installed.
 
 ```bash
@@ -320,9 +320,9 @@ Default output format [None]:
 
 This will create the `~/.aws/credentials` file used by the AWS CLI to authenticate requests.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 We'll use brew to install Azure CLI and check if it's installed.
 
 ```bash
@@ -343,8 +343,8 @@ The Azure client is authenticated and ready to use.
 Pulumi uses the Azure SDK to authenticate requests. Your AWS access keys are never sent to pulumi.com.
 {{% /notes %}}
 
-{{% /choosable %}}
-{{% choosable cloud gcp %}}
+{{< /choosable >}}
+{{< choosable cloud gcp >}}
 We'll use brew to install the Google Cloud SDK and CLI.
 
 ```bash
@@ -384,7 +384,7 @@ gcloud init
 Pulumi uses the Google Cloud SDK to authenticate requests. Your AWS access keys are never sent to pulumi.com.
 {{% /notes %}}
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ## Choose a Programming Language
@@ -394,38 +394,38 @@ Pulumi supports Node.js (JavaScript and Typescript), Python 3, Golang, and .NET 
 ### Node.js
 
 {{< chooser os "macos,windows,linux" >}}
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 Use brew to install Node.js for JavaScript and Typescript.
 
 ```bash
 $ brew install node
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os windows %}}
+{{< choosable os windows >}}
 Use chocolatey to install Node.js for JavaScript and Typescript.
 
 ```cmd
 > choco install nodejs
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os linux %}}
+{{< choosable os linux >}}
 Use brew to install Node.js for JavaScript and Typescript.
 
 ```bash
 $ brew install node
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ### Python
 
 {{< chooser os "macos,windows,linux" >}}
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 MacOS includes Python; however, versions shipped before December 2019 have Python 2.7 installed, which is deprecated. Pulumi requires Python 3.6 or higher. Use brew to install Python, which installs it at `/usr/bin/local/python3`.
 
 ```bash
@@ -440,9 +440,9 @@ alias python=/usr/local/bin/python3
 
 It is a best practice to create a virtual environment and activate it for a Python project. Pulumi creates a new `venv` environment when you start a new Project with `pulumi new`.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os windows %}}
+{{< choosable os windows >}}
 You can install Python in several ways, including typing 'python` in the command prompt, which brings up the Microsoft Store application. In this article, we'll continue using chocolatey to install Python 3.
 
 ```cmd
@@ -451,8 +451,8 @@ You can install Python in several ways, including typing 'python` in the command
 
 It is a best practice to create a virtual environment and activate it for a Python project. Pulumi creates a new `venv` environment when you start a new Project with `pulumi new`.
 
-{{% /choosable %}}
-{{% choosable os linux %}}
+{{< /choosable >}}
+{{< choosable os linux >}}
 Use brew to install Python3.
 
 ```bash
@@ -466,13 +466,13 @@ alias python=/usr/local/bin/python3
 ```
 
 It is a best practice to create a virtual environment and activate it for a Python project. Pulumi creates a new `venv` environment when you start a new Project with `pulumi new`.
-{{% /choosable %}}
+{{< /choosable >}}
 {{% /chooser %}}
 
 ### Golang
 
 {{< chooser os "macos,windows,linux" >}}
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 Use brew to install golang.
 
 ```bash
@@ -481,8 +481,8 @@ $ brew install golang
 
 It is a best practice to create a local programming environment and set `GOPATH` as an environment variable, although it is not required for golang versions after 1.8. Pulumi creates a new local environment and `go.mod` to work with modules each time you start a new Project with `pulumi new`.
 
-{{% /choosable %}}
-{{% choosable os windows %}}
+{{< /choosable >}}
+{{< choosable os windows >}}
 Use chocolatey to install golang.
 
 ```cmd
@@ -491,8 +491,8 @@ Use chocolatey to install golang.
 
 It is a best practice to create a local programming environment and set `GOPATH` as an environment variable, although it is not required for golang versions after 1.16. Pulumi creates a new local environment and `go.mod` to work with modules each time you start a new Project with `pulumi new`.
 
-{{% /choosable %}}
-{{% choosable os linux %}}
+{{< /choosable >}}
+{{< choosable os linux >}}
 Use brew to install golang.
 
 ```bash
@@ -501,36 +501,36 @@ $ brew install golang
 
 It is a best practice to create a local programming environment and set `GOPATH` as an environment variable, although it is not required for golang versions after 1.8. Pulumi creates a new local environment and `go.mod` to work with modules each time you start a new Project with `pulumi new`.
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{% /chooser %}}
 
 ### .NET
 
 {{< chooser os "macos,windows,linux" >}}
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 Install .NET with brew, Pulumi requires .NET Core 3.1 or higher.
 
 ```bash
 $ brew install dotnet
 ```
 
-{{% /choosable %}}
-{{% choosable os windows %}}
+{{< /choosable >}}
+{{< choosable os windows >}}
 Install .NET with chocolatey. Pulumi requires .NET Core 3.1 or higher.
 
 ```cmd
 > choco install dotnet-sdk
 ```
 
-{{% /choosable %}}
-{{% choosable os linux %}}
+{{< /choosable >}}
+{{< choosable os linux >}}
 Install .NET with brew, Pulumi requires .NET Core 3.1 or higher.
 
 ```bash
 $ brew install dotnet
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ## Get a code editor

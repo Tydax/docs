@@ -17,17 +17,17 @@ Let's review some of the generated project files:
 - `Pulumi.yaml` defines the [project]({{< relref "/docs/intro/concepts/project" >}}).
 - `Pulumi.dev.yaml` contains [configuration]({{< relref "/docs/intro/concepts/config" >}}) values for the [stack]({{< relref "/docs/intro/concepts/stack" >}}) you initialized.
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 - `Program.cs` with a simple entry point.
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 - {{< langfile >}} is the Pulumi program that defines your stack resources. Let's examine it.
 
 {{< chooser language "javascript,typescript,python,go,csharp" / >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 "use strict";
@@ -42,9 +42,9 @@ const bucket = new aws.s3.Bucket("my-bucket");
 exports.bucketName = bucket.id;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as pulumi from "@pulumi/pulumi";
@@ -58,9 +58,9 @@ const bucket = new aws.s3.Bucket("my-bucket");
 export const bucketName = bucket.id;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi
@@ -73,9 +73,9 @@ bucket = s3.Bucket('my-bucket')
 pulumi.export('bucket_name',  bucket.id)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 package main
@@ -100,9 +100,9 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using Pulumi;
@@ -124,50 +124,50 @@ class MyStack : Stack
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 This Pulumi program creates a new S3 bucket and exports the name of the bucket.
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 exports.bucketName = bucket.id;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 export const bucketName = bucket.id;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 pulumi.export('bucket_name',  bucket.id)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 ctx.Export("bucketName", bucket.ID())
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 [Output]
 public Output<string> BucketName { get; set; }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Next, you'll deploy your stack, which will provision your S3 bucket.
 

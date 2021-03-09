@@ -22,7 +22,7 @@ Next, create a new `index.html` file with some content in it.
 
 {{< chooser os "macos,linux,windows" / >}}
 
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 
 ```bash
 cat <<EOT > site/index.html
@@ -34,9 +34,9 @@ cat <<EOT > site/index.html
 EOT
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os linux %}}
+{{< choosable os linux >}}
 
 ```bash
 cat <<EOT > site/index.html
@@ -48,9 +48,9 @@ cat <<EOT > site/index.html
 EOT
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os windows %}}
+{{< choosable os windows >}}
 
 ```powershell
 @"
@@ -62,7 +62,7 @@ EOT
 "@ | Out-File -FilePath site\index.html
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Now that you have your new `index.html` with some content, open your IDE or text editor and modify your program to add the contents of your `index.html` file to your S3 bucket.
 
@@ -70,7 +70,7 @@ To accomplish this, we will take advantage of your chosen programming language's
 
 {{< chooser language "javascript,typescript,python,go,csharp" / >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const fs = require("fs");
@@ -85,9 +85,9 @@ const bucketObject = new aws.s3.BucketObject("index.html", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as fs from "fs";
@@ -102,9 +102,9 @@ const bucketObject = new aws.s3.BucketObject("index.html", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 Next you will create a new bucket object on the lines right after creating the bucket itself.
 
@@ -116,9 +116,9 @@ bucketObject = s3.BucketObject(
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -144,9 +144,9 @@ if err != nil {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.IO;
@@ -165,7 +165,7 @@ var bucketObject = new BucketObject("index.html", new BucketObjectArgs
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Notice how you provide the bucket you created earlier as an input to your new `BucketObject`. This is so Pulumi knows what S3 bucket the object should live in.
 

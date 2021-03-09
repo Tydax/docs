@@ -109,32 +109,32 @@ or configure AWS access from within an environment that might not have an AWS CL
 To configure these, set them in your workstation terminal application.
 
 {{< chooser os "linux,macos,windows" >}}
-{{% choosable os linux %}}
+{{< choosable os linux >}}
 
 ```bash
 $ export AWS_ACCESS_KEY_ID=<YOUR_ACCESS_KEY_ID>
 $ export AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_ACCESS_KEY>
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os macos %}}
+{{< choosable os macos >}}
 
 ```bash
 $ export AWS_ACCESS_KEY_ID=<YOUR_ACCESS_KEY_ID>
 $ export AWS_SECRET_ACCESS_KEY=<YOUR_SECRET_ACCESS_KEY>
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable os windows %}}
+{{< choosable os windows >}}
 
 ```powershell
 > $env:AWS_ACCESS_KEY_ID = "<YOUR_ACCESS_KEY_ID>"
 > $env:AWS_SECRET_ACCESS_KEY = "<YOUR_SECRET_ACCESS_KEY>"
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ## Profiles

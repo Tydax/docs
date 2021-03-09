@@ -46,7 +46,7 @@ Policies are validation functions that validate resources in a Pulumi stack. In 
 If you'd like to try out one of the examples, you can create a policy with `pulumi policy new` and run locally against a Pulumi program, specify `pulumi up --policy-pack <path-to-policy-pack>`.
 
 {{< chooser cloud "aws,azure,gcp,kubernetes" >}}
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 ```python
 from pulumi_policy import (
@@ -80,8 +80,8 @@ PolicyPack(
 )
 ```
 
-{{% /choosable %}}
-{{% choosable cloud azure %}}
+{{< /choosable >}}
+{{< choosable cloud azure >}}
 
 ```python
 from pulumi_policy import (
@@ -116,8 +116,8 @@ PolicyPack(
 )
 ```
 
-{{% /choosable %}}
-{{% choosable cloud gcp %}}
+{{< /choosable >}}
+{{< choosable cloud gcp >}}
 
 ```python
 from pulumi_policy import (
@@ -149,8 +149,8 @@ PolicyPack(
 )
 ```
 
-{{% /choosable %}}
-{{% choosable cloud kubernetes %}}
+{{< /choosable >}}
+{{< choosable cloud kubernetes >}}
 
 ```python
 from pulumi_policy import (
@@ -185,7 +185,7 @@ PolicyPack(
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ## Summary

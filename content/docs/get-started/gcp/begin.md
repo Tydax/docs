@@ -38,21 +38,21 @@ Next, install the required language runtime, if you have not already.
 
 {{< chooser language "javascript,typescript,python,go,csharp" / >}}
 
-{{% choosable language "javascript,typescript" %}}
+{{< choosable language "javascript,typescript" >}}
 {{< install-node >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 {{< install-python >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 {{< install-go >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "csharp,fsharp,visualbasic" %}}
+{{< choosable language "csharp,fsharp,visualbasic" >}}
 {{< install-dotnet >}}
-{{% /choosable %}}
+{{< /choosable >}}
 
 Finally, configure Pulumi with Google Cloud.
 

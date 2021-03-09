@@ -7,7 +7,7 @@ linktitle: Identity
 
 {{< chooser cloud "aws,azure,gcp" / >}}
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 AWS exposes an [Identity Access and Management (IAM)][iam] API which can be used to grant
 permissions to both human and bot users. Using this API, [IAM User][users] accounts can be
@@ -39,9 +39,9 @@ The full code for this stack is on [GitHub][gh-repo-stack].
 [gh-repo-stack]: https://github.com/pulumi/kubernetes-guides/tree/master/aws/01-identity
 <!-- markdownlint-enable url -->
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 Azure exposes an [Active Directory][azure-iam] API which can be used to grant
 permissions to both human and bot users. Using this API, [IAM User][azure-users] accounts can be
@@ -62,9 +62,9 @@ The full code for this stack is on [GitHub][gh-repo-stack].
 [gh-repo-stack]: https://github.com/pulumi/kubernetes-guides/tree/master/azure/01-identity
 <!-- markdownlint-enable url -->
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 GCP exposes an [Identity Access and Management (IAM)][gcp-iam] API which can be used to grant
 permissions to both human and bot users. Using this API, [IAM Members][gcp-iam] can be
@@ -84,9 +84,9 @@ The full code for this stack is on [GitHub][gh-repo-stack].
 [gh-repo-stack]: https://github.com/pulumi/kubernetes-guides/tree/master/gcp/01-identity
 <!-- markdownlint-enable url -->
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 ## Overview
 
@@ -96,9 +96,9 @@ We'll review how to:
 - [Create an IAM Role for Developers](#create-an-iam-role-for-developers)
 - [Create IAM Roles for EKS Node Groups](#create-iam-roles-for-eks-node-groups)
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 ## Overview
 
@@ -108,9 +108,9 @@ We'll review how to:
 - [Create an IAM Client Application and ServicePrincipal](#create-an-iam-server-application-and-serviceprincipal)
 - [Create an IAM Group for Developers](#create-an-iam-group-for-developers)
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 ## Overview
 
@@ -120,9 +120,9 @@ We'll review how to:
 - [Create an IAM Role for Managing CloudSQL Databases](#create-an-iam-role-for-managing-cloudsql-databases)
 - [Create an IAM Role and ServiceAccount for Developers](#create-an-iam-role-and-serviceaccount-for-developers)
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 ## Create an IAM Role for Admins
 
@@ -160,9 +160,9 @@ $ aws sts assume-role --role-arn `pulumi stack output adminsIamRoleArn` --role-s
 
 [k8s-sys-masters]: https://kubernetes.io/docs/reference/access-authn-authz/rbac#user-facing-roles
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 Azure AD integration with AKS requires that two Azure AD application objects be
 created: a server component to provide authentication, and a client component
@@ -309,9 +309,9 @@ export const adClientAppId = applicationClient.applicationId;
 
 [azure-ad-aks]: https://docs.microsoft.com/en-us/azure/aks/azure-ad-integration
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 See the official [docs][gke-rbac] for more details.
 
@@ -419,9 +419,9 @@ util.bindToRole(`${adminsName}CloudSqlAdmin`, adminsIamServiceAccount, {
 
 [k8s-sys-masters]: https://kubernetes.io/docs/reference/access-authn-authz/rbac#user-facing-roles
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 ## Create an IAM Role for Developers
 
@@ -445,9 +445,9 @@ Authenticate as the devs role.
 $ aws sts assume-role --role-arn `pulumi stack output devsIamRoleArn` --role-session-name k8s-devs
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud azure %}}
+{{< choosable cloud azure >}}
 
 ## Create an IAM Group for Admins
 
@@ -512,9 +512,9 @@ const devs = new azuread.Group("devs", {
 export const adGroupDevs = devs.name;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud gcp %}}
+{{< choosable cloud gcp >}}
 
 ## Create an IAM Role and ServiceAccount for Developers
 
@@ -553,9 +553,9 @@ $ pulumi stack output devsIamServiceAccountSecret > k8s-devs-sa-key.json
 $ gcloud auth activate-service-account --key-file k8s-devs-sa-key.json
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable cloud aws %}}
+{{< choosable cloud aws >}}
 
 ## Create IAM Roles for EKS Node Groups
 
@@ -595,4 +595,4 @@ function attachPoliciesToRole(name: string, role: aws.iam.Role, policyArns: stri
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}

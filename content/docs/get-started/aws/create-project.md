@@ -26,31 +26,31 @@ To get started, first create a new directory and project.
 
 {{< chooser language "javascript,typescript,python,go,csharp" / >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```bash
 $ mkdir quickstart && cd quickstart
 $ pulumi new aws-javascript
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```bash
 $ mkdir quickstart && cd quickstart
 $ pulumi new aws-typescript
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```bash
 $ mkdir quickstart && cd quickstart
 $ pulumi new aws-python
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```bash
 # from within your $GOPATH
@@ -58,15 +58,15 @@ $ mkdir quickstart && cd quickstart
 $ pulumi new aws-go
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```bash
 $ mkdir quickstart && cd quickstart
 $ pulumi new aws-csharp
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 The [`pulumi new`]({{< relref "/docs/reference/cli/pulumi_new" >}}) command creates a new Pulumi project with some basic scaffolding based on the cloud and language specified.
 
@@ -82,21 +82,21 @@ Finally, you will be prompted for some configuration values for the stack. For A
 
 > What are [projects]({{< relref "/docs/intro/concepts/project" >}}) and [stacks]({{< relref "/docs/intro/concepts/stack" >}})? Pulumi projects and stacks let you organize Pulumi code. Consider a Pulumi _project_ to be analogous to a GitHub repo---a single place for code---and a _stack_ to be an instance of that code with a separate configuration. For instance, _Project Foo_ may have multiple stacks for different development environments (Dev, Test, or Prod), or perhaps for different cloud configurations (geographic region for example). See [Organizing Projects and Stacks]({{< relref "/docs/guides/organizing-projects-stacks" >}}) for some best practices on organizing your Pulumi projects and stacks.
 
-{{% choosable language "javascript,typescript" %}}
+{{< choosable language "javascript,typescript" >}}
 After some dependency installations from `npm`, the project and stack will be ready.
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 After the command completes, the project and stack will be ready.
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 After the command completes, the project and stack will be ready.
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "csharp,fsharp,visualbasic" %}}
+{{< choosable language "csharp,fsharp,visualbasic" >}}
 After the command completes, the project and stack will be ready.
-{{% /choosable %}}
+{{< /choosable >}}
 
 Next, we'll review the generated project files.
 

@@ -23,7 +23,7 @@ The MongoDB Atlas provider supports several options for providing access to Mong
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const mongodbatlas = require("@pulumi/mongodbatlas")
@@ -33,8 +33,8 @@ const project = new mongodbatlas.Project("my-demo-project", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as mongodbatlas from "@pulumi/mongodbatlas";
@@ -44,8 +44,8 @@ const project = new mongodbatlas.Project("my-demo-project", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_mongodbatlas as mongodbatlas
@@ -53,8 +53,8 @@ import pulumi_mongodbatlas as mongodbatlas
 project = mongodbatlas.Project("my-demo-project", org_id="12345")
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -70,14 +70,14 @@ func main() {
     if err != nil {
         return err
     }
-  
+
     return nil
   })
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -96,7 +96,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

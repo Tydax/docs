@@ -44,7 +44,7 @@ Automation API runs inside your favorite frameworks and interacts with your othe
 
 {{< chooser language "typescript,go,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // an HTTP handler to create instances of our declarative infra
@@ -76,9 +76,9 @@ const createHandler: express.RequestHandler = async (req, res) => {
 };
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 // an HTTP handler to create instances of our declarative infra
@@ -120,9 +120,9 @@ func createHandler(w http.ResponseWriter, req *http.Request) {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 # an HTTP handler to create instances of our declarative infra
@@ -149,7 +149,7 @@ def create_handler():
         return make_response(str(exn), 500)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -157,7 +157,7 @@ The handlers work with your favorite HTTP frameworks like `mux`, `express` and `
 
 {{< chooser language "typescript,go,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // install necessary plugins once upon boot
@@ -178,9 +178,9 @@ app.delete("/sites/:id", deleteHandler);
 app.listen(1337, () => console.info("server running on :1337"));
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 func main() {
@@ -205,9 +205,9 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import Flask
@@ -240,7 +240,7 @@ def delete_handler(id: str):
     ...
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -260,7 +260,7 @@ Like any other Pulumi program, we define our cloud resources. In this case, an A
 
 {{< chooser language "typescript,go,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 const clusterInstance = new aws.rds.ClusterInstance("dbInstance", {
@@ -280,9 +280,9 @@ return {
 };
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 _, err = rds.NewClusterInstance(ctx, "dbInstance", &rds.ClusterInstanceArgs{
@@ -304,9 +304,9 @@ ctx.Export("dbPass", dbPass)
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 cluster_instance = aws.rds.ClusterInstance(
@@ -325,7 +325,7 @@ pulumi.export("db_user", db_user)
 pulumi.export("db_pass", db_pass)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -333,7 +333,7 @@ But with Automation API, we can perform database migrations and preload rows in 
 
 {{< chooser language "typescript,go,python" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // create (or select if one already exists) a stack that uses our inline program
@@ -374,9 +374,9 @@ CREATE TABLE IF NOT EXISTS hello_pulumi(
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 // create our stack with an "inline" Pulumi program (deployFunc)
@@ -407,9 +407,9 @@ CREATE TABLE IF NOT EXISTS hello_pulumi(
 `)
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 # create (or select if one already exists) a stack that uses our inline program
@@ -440,7 +440,7 @@ with connect(
 
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -456,7 +456,7 @@ We prototyped a Heroku-like developer experience called `halloumi` that demonstr
 
 {{< chooser language "typescript,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 // this application will deploy multiple services publicly available in the cloud
@@ -484,9 +484,9 @@ application.addService(svc2);
 application.run().catch(err => { console.error(err) });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 app := app.NewApp("petStore")
@@ -529,7 +529,7 @@ nAnimalsService := web.NewWebService("nAnimals", func() http.Handler {
 })
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -626,7 +626,7 @@ The Automation API is your tool to tame Cloud Engineering complexity and give yo
 
 - [Go documentation](https://pkg.go.dev/github.com/pulumi/pulumi/sdk/v2/go/x/auto)
 - [JavaScript/TypeScript documentation](https://www.pulumi.com/docs/reference/pkg/nodejs/pulumi/pulumi/x/automation/)
-- [Python documentation](https://www.pulumi.com/docs/reference/pkg/python/pulumi/#module-pulumi.x.automation)  
+- [Python documentation](https://www.pulumi.com/docs/reference/pkg/python/pulumi/#module-pulumi.x.automation)
 - [The Automation API examples repo](https://github.com/pulumi/automation-api-examples)
 - The list of [known issues](https://github.com/pulumi/pulumi/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fautomation-api). Please [file more](https://github.com/pulumi/pulumi/issues/new?assignees=&labels=needs-triage&template=bug_report.md&title=) as you find them!
 - [The Pulumi Kubernetes Operator](https://github.com/pulumi/pulumi-kubernetes-operator)

@@ -56,7 +56,7 @@ $ pulumi policy new azure-python
 ### AWS
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as aws from "@pulumi/aws";
@@ -78,8 +78,8 @@ new PolicyPack("policy-pack-typescript", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi_policy import (
@@ -113,13 +113,13 @@ PolicyPack(
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ### Azure
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as azure from "@pulumi/azure";
@@ -142,8 +142,8 @@ new PolicyPack("azure-typescript", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi_policy import (
@@ -178,13 +178,13 @@ PolicyPack(
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ### Google Cloud
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as gcp from "@pulumi/gcp";
@@ -204,8 +204,8 @@ new PolicyPack("gcp-typescript", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi_policy import (
@@ -237,13 +237,13 @@ PolicyPack(
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ### Kubernetes
 
 {{< chooser language "typescript,python" >}}
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as k8s from "@pulumi/kubernetes";
@@ -265,8 +265,8 @@ new PolicyPack("kubernetes-typescript", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 from pulumi_policy import (
@@ -301,7 +301,7 @@ PolicyPack(
 )
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 {{< /chooser >}}
 
 ## All Clouds and all resources

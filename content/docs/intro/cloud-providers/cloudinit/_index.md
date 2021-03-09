@@ -16,7 +16,7 @@ See the [full API documentation]({{< relref "/docs/reference/pkg/cloudinit" >}})
 
 {{< chooser language "javascript,typescript,python,go,csharp" >}}
 
-{{% choosable language javascript %}}
+{{< choosable language javascript >}}
 
 ```javascript
 const cloudinit = require("@pulumi/cloudinit")
@@ -32,8 +32,8 @@ const resourceConf = new cloudinit.Config("config", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language typescript %}}
+{{< /choosable >}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as cloudinit from "@pulumi/cloudinit";
@@ -49,8 +49,8 @@ const resourceConf = new cloudinit.Config("config", {
 });
 ```
 
-{{% /choosable %}}
-{{% choosable language python %}}
+{{< /choosable >}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_cloudinit as cloudinit
@@ -64,8 +64,8 @@ resource_config = cloudinit.Config("resource", base64_encode=False,
                                    )])
 ```
 
-{{% /choosable %}}
-{{% choosable language go %}}
+{{< /choosable >}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -95,8 +95,8 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
-{{% choosable language csharp %}}
+{{< /choosable >}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System.Collections.Generic;
@@ -126,7 +126,7 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

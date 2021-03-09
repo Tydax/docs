@@ -52,7 +52,7 @@ Pulumi executes your program by loading the entrypoint file as a Node module: `r
 
 Your entrypoint can either return a module object with properties for each stack output:
 
-{{% choosable language "javascript" %}}
+{{< choosable language "javascript" >}}
 
 ```javascript
 // create resources
@@ -60,9 +60,9 @@ Your entrypoint can either return a module object with properties for each stack
 exports.out = myResource.output;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 ```typescript
 // create resources
@@ -70,12 +70,12 @@ exports.out = myResource.output;
 export const out = myResource.output;
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 Or alternatively, your entrypoint can export a top level `async` function that returns an object with members for each stack output.
 Pulumi will automatically call this function and await the result:
 
-{{% choosable language "javascript" %}}
+{{< choosable language "javascript" >}}
 
 ```javascript
 module.exports = async () => {
@@ -84,9 +84,9 @@ module.exports = async () => {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language "typescript" %}}
+{{< choosable language "typescript" >}}
 
 ```typescript
 export = async () => {
@@ -95,7 +95,7 @@ export = async () => {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

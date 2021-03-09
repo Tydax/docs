@@ -26,7 +26,7 @@ Let's see how to deploy a Kustomization from a local directory.
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as k8s from "@pulumi/kubernetes";
@@ -36,9 +36,9 @@ new k8s.kustomize.Directory("helloWorldLocal", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_kubernetes as k8s
@@ -47,9 +47,9 @@ k8s.kustomize.Directory("helloWorldLocal",
                         directory="helloWorld")
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System;
@@ -75,9 +75,9 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -101,7 +101,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -114,7 +114,7 @@ by specifying the path to the directory.
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as k8s from "@pulumi/kubernetes";
@@ -124,9 +124,9 @@ new k8s.kustomize.Directory("helloWorldRemote", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_kubernetes as k8s
@@ -135,9 +135,9 @@ k8s.kustomize.Directory("helloWorldRemote",
                         directory="https://github.com/kubernetes-sigs/kustomize/tree/v3.3.1/examples/helloWorld")
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System;
@@ -163,9 +163,9 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -189,7 +189,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 
@@ -208,7 +208,7 @@ an existing configuration.
 
 {{< chooser language "typescript,python,csharp,go" >}}
 
-{{% choosable language typescript %}}
+{{< choosable language typescript >}}
 
 ```typescript
 import * as k8s from "@pulumi/kubernetes";
@@ -225,9 +225,9 @@ new k8s.kustomize.Directory("helloWorldRemote", {
 });
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language python %}}
+{{< choosable language python >}}
 
 ```python
 import pulumi_kubernetes as k8s
@@ -241,9 +241,9 @@ k8s.kustomize.Directory("helloWorldRemote",
                         transformations=[change_service_type])
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language csharp %}}
+{{< choosable language csharp >}}
 
 ```csharp
 using System;
@@ -288,9 +288,9 @@ class Program
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
-{{% choosable language go %}}
+{{< choosable language go >}}
 
 ```go
 import (
@@ -322,7 +322,7 @@ func main() {
 }
 ```
 
-{{% /choosable %}}
+{{< /choosable >}}
 
 {{< /chooser >}}
 

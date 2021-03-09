@@ -51,41 +51,41 @@ To start, we'll need to create a project and stack (a deployment target) for our
 
     {{< chooser language "typescript,python,go,csharp" >}}
 
-    {{% choosable language typescript %}}
+    {{< choosable language typescript >}}
 
 ```shell
 $ mkdir k8s-guestbook && cd k8s-guestbook
 $ pulumi new kubernetes-typescript
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
-    {{% choosable language python %}}
+    {{< choosable language python >}}
 
 ```shell
 $ mkdir k8s-guestbook && cd k8s-guestbook
 $ pulumi new kubernetes-python
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
-    {{% choosable language go %}}
+    {{< choosable language go >}}
 
 ```shell
 $ mkdir k8s-guestbook && cd k8s-guestbook
 $ pulumi new kubernetes-go
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
-    {{% choosable language csharp %}}
+    {{< choosable language csharp >}}
 
 ```shell
 $ mkdir k8s-guestbook && cd k8s-guestbook
 $ pulumi new kubernetes-csharp
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
     {{< /chooser >}}
 
@@ -95,7 +95,7 @@ $ pulumi new kubernetes-csharp
 
     {{< chooser language "typescript,python,go,csharp" >}}
 
-    {{% choosable language typescript %}}
+    {{< choosable language typescript >}}
 
 ```typescript
 // index.ts
@@ -227,9 +227,9 @@ if (isMinikube) {
 }
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
-    {{% choosable language python %}}
+    {{< choosable language python >}}
 
 ```python
 # __main__.py
@@ -410,9 +410,9 @@ else:
 pulumi.export("frontend_ip", frontend_ip)
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
-    {{% choosable language go %}}
+    {{< choosable language go >}}
 
 ```go
 // main.go
@@ -662,9 +662,9 @@ func main() {
 }
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
-    {{% choosable language csharp %}}
+    {{< choosable language csharp >}}
 
 ```csharp
 //MyStack.cs
@@ -933,7 +933,7 @@ class Guestbook : Stack
 }
 ```
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
     {{< /chooser >}}
 
@@ -1104,7 +1104,7 @@ class Guestbook : Stack
 
     {{< chooser language "typescript,python,go,csharp" >}}
 
-    {{% choosable language typescript %}}
+    {{< choosable language typescript >}}
 
 ```typescript
         replicas: 3,
@@ -1118,9 +1118,9 @@ and change it to:
 
 Or simply run `sed -i "s/replicas: 3/replicas: 5/g" index.ts`.
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
-    {{% choosable language python %}}
+    {{< choosable language python >}}
 
 ```python
         "replicas": 3,
@@ -1134,9 +1134,9 @@ and change it to:
 
 Or simply run `sed -i "s/\"replicas\": 3/\"replicas\": 5/g" __main__.py`.
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
-    {{% choosable language go %}}
+    {{< choosable language go >}}
 
 ```go
         Replicas: pulumi.Int(3),
@@ -1150,9 +1150,9 @@ and change it to:
 
 Or simply run `sed -i "s/Replicas = pulumi\.Int(3)/Replicas = pulumi\.Int(5)/g" main.go`.
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
-    {{% choosable language csharp %}}
+    {{< choosable language csharp >}}
 
 ```csharp
         Replicas = 3,
@@ -1166,7 +1166,7 @@ and change it to:
 
 Or simply run `sed -i "s/Replicas = 3/Replicas = 5/g" MyStack.cs`.
 
-    {{% /choosable %}}
+    {{< /choosable >}}
 
     {{< /chooser >}}
 
